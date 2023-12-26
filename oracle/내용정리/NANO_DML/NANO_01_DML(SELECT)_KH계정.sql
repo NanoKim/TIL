@@ -1,3 +1,25 @@
+--------------------------------------------------------------------------------
+
+/*
+    < 계정 생성 및 권한 부여 >
+    SELECT * FROM DBA_USERS; : 모든 계정 조회
+    CREATE USER kh IDENTIFIED BY kh; 
+    GRANT CONNECT, RESOURCE TO kh;
+*/
+
+--------------------------------------------------------------------------------
+
+/*
+    < 시스템 설정 - 로컬 언어 변경 >
+    SELECT *
+    FROM NLS_SESSION_PARAMETERS; -- << 자동으로 생기는 테이블이고, 여기서 PARAMETER LANGUAGE 의 VALUE 를 영어로 바꿔야 함
+
+    ALTER(변경하다) SESSION<테이블이름> SET NLS_LANGUAGE = AMERICAN; -- KOREAN(원본이 KOREAN 이라는 것을 알려주도록 백업 메모 남기는 습관)
+    ALTER(변경하다) SESSION<테이블이름> SET NLS_LANGUAGE = KOREAN;
+*/
+
+--------------------------------------------------------------------------------
+
 /*
     < SELECT >
     데이터 조회할 때 사용되는 구문
