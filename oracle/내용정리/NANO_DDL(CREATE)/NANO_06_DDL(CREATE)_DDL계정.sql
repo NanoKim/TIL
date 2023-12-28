@@ -1,8 +1,3 @@
--- ddl / ddl 동일하게 만들고, 커넥트, 리소스 권한 부여
-CREATE USER ddl IDENTIFIED BY ddl;
-
-GRANT CONNECT, RESOURCE TO ddl;
-
 /*
     * DDL (DATA DEFINITION LANGUAGE) : 데이터 정의 언어
     오라클에서 제공하는 객체(OBJECT)를 새로이 만들고, 구조를 변경 (ALTER)하고, 구조 자체를 삭제(DROP) 하는 언어
@@ -83,17 +78,32 @@ GRANT CONNECT, RESOURCE TO ddl;
       삽입 / 수정 시 기존에 있는 데이터 값 중 중복값이 있을 경우 오류발생
       
     * CHECK(조건식) 제약조건
-    해당 컬럼에 들어올 수 있는 값에 대한 조건을 제시해둘 수 있음
-    해당 조건에 만족하는 데이터 값만 담길 수 있음
+      해당 컬럼에 들어올 수 있는 값에 대한 조건을 제시해둘 수 있음
+      해당 조건에 만족하는 데이터 값만 담길 수 있음
     
     * PRIMARY KEY(기본키) 제약조건
-    테이블에서 각 행들을 식별하기 위해 사용될 컬럼에 부여하는 제약조건 (식별자의 역할)
-    * 유의사항 : 한 테이블당 오로지 한 개만 설정가능
+      테이블에서 각 행들을 식별하기 위해 사용될 컬럼에 부여하는 제약조건 (식별자의 역할)
+      
+      >> 유의사항 : 한 테이블당 오로지 한 개만 설정가능
+      >> PRIMART KEY 제약조건을 부여하면 그 컬럼에 자동으로 NOT NULL + UNIQUE 제약조건을 가진다.
     
-    PRIMART KEY 제약조건을 부여하면 그 컬럼에 자동으로 NOT NULL + UNIQUE 제약조건을 가진다.
+    ** PRIMARY KEY(복합키 대상 컬럼1, 복합키 대상 컬럼2)
+       복합키
+       
+    * FOREIGN KEY(외래키) 제약조건
+      다른 테이블에 존재하는 값만 들어와야 되는 특정 컬럼에 부여하는 제약조건
+      
+      >> 다른 테이블을 참조한다고 표현
+      >> 주로 FOREIGN KEY 제약조건에 의해 테이블 간의 관계가 형성
     
-    ** 복합키
-    PRIMARY KEY(복합키 대상 컬럼1, 복합키 대상 컬럼2)
+      > 컬럼 레벨 방식
+      컬럼명 자료형 [CONSTRAINT 제약조건명] REFERENCES 참조할 테이블명[(참조할 컬럼명)]
+    
+      > 테이블 레벨 방식
+      [CONSTRAINT 제약조건명] FOREIGN KEY(컬렴명) REFERENCES 참조할 테이블명[(참조할 컬럼명)]
+    
+      * 컬럼이든, 테이블 레벵방식이든,
+      [(참조할 컬럼명)] 을 생략 시, 참조할 테이블에 PRIMARY KEY로 지정된 컬럼으로 자동 매칭
 */
 
 /*
@@ -113,6 +123,82 @@ GRANT CONNECT, RESOURCE TO ddl;
         [CONSTRAINT 제약조건명] 제약조건(컬럼명)
     );
 */
+
+/*
+    자식 테이블 생성 시 외래키 제약조건 부여할 때 삭제옵션 지정가능
+    * 삭제옵션 : 부모테이블의 데이터 삭제 시 그 데이터를 사용하고 있는 자식테이블의 값을 어떻게 처리할건지
+    
+    FOREIGN KEY 설정할 때 아무것도 안하면 (기본값)
+    - ON DELETE RESTRICTED  : 삭제제한 옵션으로, 자식데이터로 쓰이는 부모데이터는 삭제 안되게끔
+
+    FOREIGN KEY 설정할 때 별도 설정
+    - ON DELETE SET NULL : 부모데이터 삭제시 해당 데이터를 쓰고 있는 자식데이터의 값을 NULL로 변경
+    - ON DELETE CASCADE : 부모데이터 삭제시 해당 데이터를 쓰고 있는 자식데이터도 같이 삭제
+*/
+
+/*
+    < DEFAULT 기본값 > ** 제약조건 아님 **
+    컬럼을 선정하지 않고, INSERT 시 NULL 이 아닌 기본값을 INSERT 하고자 할 때 세팅해둘 수 있는 값
+
+    [컬럼레벨방식]
+    CREATE TABLE 테이블명(
+        컬럼명 자료형 [DEFAULT '기본값'] [CONSTRAINT 제약조건명] 제약조건
+    );
+      
+    [테이블레벨방식]
+    CREATE TABLE 테이블명(
+        컬럼명 자료형 [DEFAULT '기본값'],
+        컬럼명 자료형 [DEFAULT '기본값'],
+        ...
+        [CONSTRAINT 제약조건명] 제약조건(컬럼명)
+    );
+*/
+
+/*
+    < SUBQUERY 를 이용한 테이블 생성 >
+    테이블 복사 개념
+    
+    [표현법]
+    CREATE TABLE 테이블명
+    AS 서브쿼리;
+    
+    * 데이터는 제외하고, 구조만 복사하고 싶다면 서브쿼리의 WHERE 절에 1 = 0 과 같이 FALSE 조건 기술
+    * 컬럼, 데이터값, 제약조건 같은 경우 NOT NULL만 복사
+    * 함수식 OR 산술식은 별칭을 부여해야만 복사 가능
+*/
+
+/*
+    * 테이블 다 생성된 후 제약조건 추가
+    ALTER TABLE 테이블명 변경할내용;
+    
+    - PRIMARY KEY : ALTER TABLE 테이블명 ADD PRIMARY KEY(컬럼명);
+    - FOREIGN KEY : ALTER TABLE 테이블명 ADD FOREIGN KEY(컬럼명) REFERENCES 참조할 테이블명[(참조할 컬럼명)];
+    - UNIQUE      : ALTER TABLE 테이블명 ADD UNIQUE(컬럼명);
+    - CHECK       : ALTER TABLE 테이블명 ADD CHECK(컬럼에 대한 조건식);
+    - NOT NULL    : ALTER TABLE 테이블명 MODIFY 컬럼명 NOT NULL;
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
