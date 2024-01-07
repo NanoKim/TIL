@@ -310,6 +310,8 @@ WHERE  ROWNUM <= 5;
 <br/>
 
 3-11. 부서 별 급여 합계가 전체 급여 총 합의 20%보다 많은 부서의 부서 명, 부서 별 급여 합계 조회
+
+**ANSI**
 ```sql
 SELECT DEPT_TITLE,
        SUM(SALARY)
