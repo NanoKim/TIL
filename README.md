@@ -6,9 +6,9 @@
 - [프로그래머스](https://github.com/NanoKim/Algorithm/tree/main/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/unrated)
 
 ## oracle
-- [내용정리](https://github.com/NanoKim/TIL/blob/main/oracle/%EB%82%B4%EC%9A%A9%EC%A0%95%EB%A6%AC.md)
-- [문제풀이(기초)](https://github.com/NanoKim/TIL/blob/main/oracle/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4(%EA%B8%B0%EC%B4%88).md)
-- [문제풀이(기출)](https://github.com/NanoKim/TIL/blob/main/oracle/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4(%EA%B8%B0%EC%B6%9C).md)
+- [내용정리](./내용정리.md)
+- [문제풀이(기초)](./문제풀이(기초).md)
+- [문제풀이(기출)](./문제풀이(기출).md)
 
 <!--
 ## TBU
