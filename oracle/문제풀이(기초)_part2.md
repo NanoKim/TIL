@@ -9,8 +9,8 @@
   - [Additional Option](#additional-option)
   - [DDL](#ddl)
   - [DML](#dml)
-- [STEP 5](#step-5)
-- [STEP 6](#step-6)
+- [STEP 5](https://github.com/NanoKim/TIL/blob/main/oracle/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4(%EA%B8%B0%EC%B4%88)_part3.md)
+- [STEP 6](https://github.com/NanoKim/TIL/blob/main/oracle/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4(%EA%B8%B0%EC%B4%88)_part3.md)
 
 # STEP 3
 3-1. 
