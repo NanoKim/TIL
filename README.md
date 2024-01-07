@@ -7,7 +7,9 @@
 
 ## oracle
 - [내용정리](https://github.com/NanoKim/TIL/blob/main/oracle/%EB%82%B4%EC%9A%A9%EC%A0%95%EB%A6%AC.md)
-- [문제풀이(기초)](https://github.com/NanoKim/TIL/blob/main/oracle/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4(%EA%B8%B0%EC%B4%88).md)
+- [문제풀이(기초)_part1](https://github.com/NanoKim/TIL/blob/main/oracle/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4(%EA%B8%B0%EC%B4%88)_part1.md)
+- [문제풀이(기초)_part2](https://github.com/NanoKim/TIL/blob/main/oracle/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4(%EA%B8%B0%EC%B4%88)_part2.md)
+- [문제풀이(기초)_part3](https://github.com/NanoKim/TIL/blob/main/oracle/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4(%EA%B8%B0%EC%B4%88)_part3.md)
 - [문제풀이(기출)](https://github.com/NanoKim/TIL/blob/main/oracle/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4(%EA%B8%B0%EC%B6%9C).md)
 
 <!--
