@@ -17,12 +17,15 @@
 
 **Oracle**
 ```sql
-SELECT EMP_NAME,
-       EMP_NO,
-       DEPT_TITLE,
-       JOB_NAME
-FROM   EMPLOYEE E, DEPARTMENT, JOB J
-WHERE  DEPT_CODE = DEPT_ID
+SELECT
+       EMP_NAME
+     , EMP_NO
+     , DEPT_TITLE
+     , JOB_NAME
+  FROM EMPLOYEE E
+     , DEPARTMENT
+     , JOB J
+ WHERE DEPT_CODE = DEPT_ID
        AND E.JOB_CODE = J.JOB_CODE
        AND SUBSTR(EMP_NO,1,1) = 7
        AND SUBSTR(EMP_NO,8,1) IN (2,4)
@@ -31,14 +34,15 @@ WHERE  DEPT_CODE = DEPT_ID
 
 **ANSI**
 ```sql
-SELECT EMP_NAME,
-       EMP_NO,
-       DEPT_TITLE,
-       JOB_NAME
-FROM   EMPLOYEE
-JOIN   DEPARTMENT ON(DEPT_CODE = DEPT_ID)
-JOIN   JOB USING(JOB_CODE)
-WHERE  SUBSTR(EMP_NO,1,1) = 7
+SELECT
+       EMP_NAME
+     , EMP_NO
+     , DEPT_TITLE
+     , JOB_NAME
+  FROM EMPLOYEE
+  JOIN DEPARTMENT ON(DEPT_CODE = DEPT_ID)
+  JOIN JOB USING(JOB_CODE)
+ WHERE SUBSTR(EMP_NO,1,1) = 7
        AND SUBSTR(EMP_NO,8,1) IN (2,4)
        AND EMP_NAME LIKE '전%';
 ```
@@ -49,32 +53,37 @@ WHERE  SUBSTR(EMP_NO,1,1) = 7
 
 **Oracle**
 ```sql
-SELECT *
-FROM   (SELECT EMP_ID,
-               EMP_NAME,
-               FLOOR((SYSDATE - TO_DATE(SUBSTR(EMP_NO,1,6),'RR/MM/DD'))/365.25) AS 나이,
-               DEPT_TITLE,
-               JOB_NAME
-        FROM   EMPLOYEE E, DEPARTMENT, JOB J
-        WHERE  DEPT_CODE = DEPT_ID
+SELECT
+       *
+  FROM (SELECT EMP_ID
+             , EMP_NAME
+             , FLOOR((SYSDATE - TO_DATE(SUBSTR(EMP_NO,1,6),'RR/MM/DD'))/365.25) AS 나이
+             , DEPT_TITLE
+             , JOB_NAME
+          FROM EMPLOYEE E
+             , DEPARTMENT
+             , JOB J
+         WHERE DEPT_CODE = DEPT_ID
                AND E.JOB_CODE = J.JOB_CODE
-        ORDER  BY 3)
-WHERE  ROWNUM = 1;
+         ORDER BY 3)
+ WHERE ROWNUM = 1;
 ```
 
 **ANSI**
 ```sql
-SELECT *
-FROM   (SELECT EMP_ID,
-               EMP_NAME,
-               FLOOR((SYSDATE - TO_DATE(SUBSTR(EMP_NO,1,6),'RR/MM/DD'))/365.25) AS 나이,
-               DEPT_TITLE,
-               JOB_NAME
-        FROM   EMPLOYEE
-        JOIN   DEPARTMENT ON(DEPT_CODE = DEPT_ID)
-        JOIN   JOB USING(JOB_CODE)
-        ORDER  BY 3)
-WHERE  ROWNUM = 1;
+SELECT
+       *
+  FROM (SELECT EMP_ID
+             , EMP_NAME
+             , FLOOR((SYSDATE - TO_DATE(SUBSTR(EMP_NO,1,6),'RR/MM/DD'))/365.25) AS 나이
+             , DEPT_TITLE
+             , JOB_NAME
+          FROM EMPLOYEE
+          JOIN DEPARTMENT ON(DEPT_CODE = DEPT_ID)
+          JOIN JOB USING(JOB_CODE)
+         ORDER
+            BY 3)
+ WHERE ROWNUM = 1;
 ```
 
 <br/>
@@ -83,22 +92,25 @@ WHERE  ROWNUM = 1;
 
 **Oracle**
 ```sql
-SELECT EMP_ID,
-       EMP_NAME,
-       JOB_NAME
-FROM   EMPLOYEE E, JOB J
-WHERE  E.JOB_CODE = J.JOB_CODE
+SELECT
+       EMP_ID
+     , EMP_NAME
+     , JOB_NAME
+  FROM EMPLOYEE E
+     , JOB J
+ WHERE E.JOB_CODE = J.JOB_CODE
        AND EMP_NAME LIKE '%형%';
 ```
 
 **ANSI**
 ```sql
-SELECT EMP_ID,
-       EMP_NAME,
-       JOB_NAME
-FROM   EMPLOYEE
-JOIN   JOB USING(JOB_CODE)
-WHERE  EMP_NAME LIKE '%형%';
+SELECT
+       EMP_ID
+     , EMP_NAME
+     , JOB_NAME
+  FROM EMPLOYEE
+  JOIN JOB USING(JOB_CODE)
+ WHERE EMP_NAME LIKE '%형%';
 ```
 
 <br/>
@@ -107,30 +119,36 @@ WHERE  EMP_NAME LIKE '%형%';
 
 **Oracle**
 ```sql
-SELECT EMP_NAME,
-       JOB_NAME,
-       DEPT_CODE,
-       DEPT_TITLE
-FROM   EMPLOYEE E, JOB J, DEPARTMENT
-WHERE  E.JOB_CODE = J.JOB_CODE
+SELECT
+       EMP_NAME
+     , JOB_NAME
+     , DEPT_CODE
+     , DEPT_TITLE
+  FROM EMPLOYEE E
+     , JOB J
+     , DEPARTMENT
+ WHERE E.JOB_CODE = J.JOB_CODE
        AND DEPT_CODE = DEPT_ID
-       AND DEPT_CODE IN ('D5','D6')
-ORDER  BY 3 DESC,
-          1;
+       AND DEPT_CODE IN('D5','D6')
+ ORDER
+    BY 3 DESC
+     , 1;
 ```
 
 **ANSI**
 ```sql
-SELECT EMP_NAME,
-       JOB_NAME,
-       DEPT_CODE,
-       DEPT_TITLE
-FROM   EMPLOYEE
-JOIN   JOB USING(JOB_CODE)
-JOIN   DEPARTMENT ON(DEPT_CODE = DEPT_ID)
-WHERE  DEPT_CODE IN ('D5','D6')
-ORDER  BY 3 DESC,
-          1;
+SELECT
+       EMP_NAME
+     , JOB_NAME
+     , DEPT_CODE
+     , DEPT_TITLE
+  FROM EMPLOYEE
+  JOIN JOB USING(JOB_CODE)
+  JOIN DEPARTMENT ON(DEPT_CODE = DEPT_ID)
+ WHERE DEPT_CODE IN('D5','D6')
+ ORDER
+    BY 3 DESC
+     , 1;
 ```
 
 <br/>
@@ -139,7 +157,8 @@ ORDER  BY 3 DESC,
 
 **Oracle**
 ```sql
-SELECT EMP_NAME,
+SELECT
+       EMP_NAME,
        BONUS,
        DEPT_TITLE,
        LOCAL_NAME
