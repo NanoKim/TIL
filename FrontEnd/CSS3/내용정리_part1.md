@@ -227,11 +227,234 @@
 
 # 영역 관련 스타일
 
+요소 영역 = content(내용물) + padding(여백) + border(테두리)
+![image](https://github.com/NanoKim/TIL/assets/151509995/e5873047-0fcf-4c78-b16c-caa0ea519a9f)
+
+**padding**
+
+내용물 영역(content)과 테두리 영역(border) 사이의 거리(여백)를 조절하는 스타일 속성
+```html
+#test1{
+    padding: 100px;
+}
+
+#test2{
+    padding-top: 100px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+}
+
+#test3{
+    padding: 100px 20px 30px 10px; /* 위 아래 오른쪽 아래 (시계방향) */
+    padding: 50px 30px; /* 위아래 좌우 */
+}
+
+<div class="test" id="test1">컨텐츠영역</div>
+<div class="test" id="test2">컨텐츠영역</div>
+<div class="test" id="test3">컨텐츠영역</div>
+```
+
+![image](https://github.com/NanoKim/TIL/assets/151509995/6a615a24-f560-4c23-856e-ec8dbdc13363)
+
+**margin**
+
+타 요소들 간의 간격을 조정할 때 사용
+
+```html
+#test4{
+    margin: 50px; /* 사방으로 50px */
+}
+
+#test5{
+    margin-top: 100px;
+    margin-left: 30px;
+}
+
+#test6{
+    margin: auto; /* 좌우기준 가운데 배치 */
+}
+
+<div class="test" id="test4">컨텐츠영역</div><br>
+<div class="test" id="test5">컨텐츠영역</div><br>
+<div class="test" id="test6">컨텐츠영역</div><br>
+```
+
+![image](https://github.com/NanoKim/TIL/assets/151509995/6d85f3a1-0b74-4c20-b9f9-b86b43c106ec)
+
+*h3과 p처럼 기본 마진이 있는 태그들이 존재
+
 # 테두리 관련 스타일
+
+|속성|기능|
+|---|---|
+|border[-위치]-style|테두리 스타일|
+|border[-위치]-width|테두리 두께|
+|border[-위치]-color|테두리 색상|
+|border[-상하위치, 좌우위치]-radius|테두리 라운딩|
+|box-shadow|박스에 그림자 효과|
 
 # 배경 관련 스타일
 
+|속성|기능|
+|---|---|
+|background-color|배경색 지정|
+|background-clip|배경 적용 범위 지정|
+|background-image:url("img경로")|이미지 배경|
+|background-repeat|이미지 배경 반복|
+|background-size|배경 사이즈 지정|
+|background-position|배경 위치 지정|
+|background-attachment|배경 고정\|스크롤 지정|
+
 # 레이아웃 관련 스타일
+
+**블럭요소** : 한 줄로 영역을 차지하는 요소 / 줄바꿈 발생(div, p, pre, h)
+
+**인라인요소** : content 부분만 영역을 차지하는 요소 / 옆으로 배치(span, label, input, img, 글자관련태그들)
+
+* 요소 영역 = content 영역 + padding 영역(안쪽 여백) + border 영역
+  요소 바깥쪽 영역 == margin 영역 (바깥쪽 간격)
+
+**width, height**
+
+기본적으로는 내용을 차지하는 content 영역의 가로, 세로 길이를 조절하는 스타일 속성
+
+**display**
+
+화면 배치 방법 변경
+```html
+display : inline|block|inline-block;
+```
+
+**display : inline**
+```html
+.display-test{
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+}
+
+.inline{display: inline;} /* 이 순간, 위에서 지정한 가로 150px 세로 150px 지정이 무시 */
+
+<div class="display-test inline red">첫번째</div>
+<div class="display-test inline yellow">두번째</div>
+<div class="display-test inline pink">세번째</div>
+<div class="display-test inline green">네번째</div>
+<div class="display-test inline purple">다섯번째</div>
+```
+![image](https://github.com/NanoKim/TIL/assets/151509995/711333cd-42ef-409e-af71-7ac70f5feefd)
+
+**inline 하게되면 width와 height 스타일 속성은 적용되지 않음**
+
+**display : inline-block**
+```html
+.inline-block{display: inline-block;}
+
+<div class="display-test inline-block red">첫번째</div>
+<div class="display-test inline-block yellow">두번째</div>
+<div class="display-test inline-block pink">세번째</div>
+<div class="display-test inline-block green">네번째</div>
+<div class="display-test inline-block purple">다섯번째</div>
+```
+![image](https://github.com/NanoKim/TIL/assets/151509995/e3dcd27d-9d23-4ee4-8ea0-989c0972fd39)
+
+**display : block**
+```html
+.block{display: block;}
+
+<span class="display-test block red">첫번째</span>
+<span class="display-test block yellow" >두번째</span>
+<span class="display-test block pink">세번째</span>
+<span class="display-test block green">네번째</span>
+<span class="display-test block purple">다섯번째</span>
+```
+![image](https://github.com/NanoKim/TIL/assets/151509995/03346726-75e7-48ac-8186-58482423d3b5)
 
 # 배치 관련 스타일
 
+**position : 상대위치(relative)와 절대위치(absolute)**
+```html
+.outer{position: relative;} /*outer 클래스가 기준이 된다는 뜻*/
+
+#first{
+    width: 300px;
+    height: 300px;
+    background-color: yellow;
+}
+
+#second{
+    width: 200px;
+    height: 200px;
+    background-color: yellowgreen;
+    position: absolute; /*내가 원하는 위치에 부여하기 위함*/
+    top: 50px;
+    left: 50px;
+    /* position:relative로 세팅한 부모요소로부터 위쪽으로 50, 왼쪽으로 50px 떨어진 위치에 자리 */
+}
+
+#third{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+<div class="outer">
+    <div class="positioning" id="first">첫번째 자식</div>
+    <div class="positioning" id="second">두번째 자식</div>
+    <div class="positioning" id="third">세번째 자식</div>
+</div>
+```
+![image](https://github.com/NanoKim/TIL/assets/151509995/a032c2df-64ab-4262-89fb-19526267e0ab)
+
+**position : 고정위치(fixed)**
+```html
+position: fixed;
+
+<div class="positioning" id="fixed-area"></div>
+```
+
+**z-index : 요소들을 순서대로 위로 쌓는 속성**
+```html
+.z-test{
+    border: 1px solid black;
+    width: 150px;
+    height: 100px;
+    position: absolute; /*내가 원하는 위치에 부여하기 위함*/
+}
+
+#z1{
+    background-color: yellow;
+    top: 100px;
+    left: 100px;
+    z-index: 99999; /*z-index 를 강조하는 방법(아주 큰 숫자 제시해서 우선순위 강조)*/
+}
+
+#z2{
+    background-color: green;
+    top: 50px;
+    left: 50px;
+    z-index: 2;
+}
+
+#z3{
+    background-color: red;
+    z-index: 1;
+}
+
+<div class="outer">
+    <div class="z-test" id="z1">요소1</div>
+    <div class="z-test" id="z2">요소2</div>
+    <div class="z-test" id="z3">요소3</div>
+</div>
+```
+![image](https://github.com/NanoKim/TIL/assets/151509995/adfdf280-4424-4c62-851e-37fe0a2915d3)
+
+**etc**
+- float : 페이지 내의 요소들을 화면으로부터 띄워서 왼쪽 or 오른쪽으로 배치하는 속성 (display:inline과 비슷하지만, float은 띄워지는 것)
+- visivility : 특정 요소를 보이거나 보이지 않게 하는 스타일 속성
+- visibility : hidden 은 공간을 차지하지만, display:non은 공간마저도 사라지게
+    - 회원가입할 때, 정보를 전부 입력하기 전에는 안 보이지만, 다 입력하면 보이게 할 때
+    - 아이디랑 비밀번호만 입력하면 회원가입 될 것 처럼 해 놓고, 비밀번호 입력하고 나면 비번확인 띄게 할 때 등 사용
