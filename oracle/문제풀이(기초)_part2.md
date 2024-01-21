@@ -55,7 +55,8 @@ SELECT
 ```sql
 SELECT
        *
-  FROM (SELECT EMP_ID
+  FROM (SELECT
+               EMP_ID
              , EMP_NAME
              , FLOOR((SYSDATE - TO_DATE(SUBSTR(EMP_NO,1,6),'RR/MM/DD'))/365.25) AS 나이
              , DEPT_TITLE
@@ -73,7 +74,8 @@ SELECT
 ```sql
 SELECT
        *
-  FROM (SELECT EMP_ID
+  FROM (SELECT
+               EMP_ID
              , EMP_NAME
              , FLOOR((SYSDATE - TO_DATE(SUBSTR(EMP_NO,1,6),'RR/MM/DD'))/365.25) AS 나이
              , DEPT_TITLE
