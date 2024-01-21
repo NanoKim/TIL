@@ -107,7 +107,7 @@ SELECT
        *
   FROM EMPLOYEE
  WHERE SALARY >= 4000000
-       AND JOB_CODE = 'J2';
+   AND JOB_CODE = 'J2';
 ```
 
 <br/>
@@ -120,7 +120,7 @@ SELECT
      , HIRE_DATE AS "고용일"
   FROM EMPLOYEE
  WHERE DEPT_CODE IN('D9','D5')
-       AND HIRE_DATE < '02/01/01';
+   AND HIRE_DATE < '02/01/01';
 ```
 
 <br/>
@@ -131,7 +131,7 @@ SELECT
        *
   FROM EMPLOYEE
  WHERE HIRE_DATE BETWEEN '90/01/01'
-       AND '01/01/01';
+   AND '01/01/01';
 ```
 
 <br/>
@@ -163,10 +163,10 @@ SELECT
        *
   FROM EMPLOYEE
  WHERE EMAIL LIKE '____$_%' ESCAPE '$' 
-       AND DEPT_CODE IN('D9','D6') 
-       AND HIRE_DATE BETWEEN '90/01/01'
-       AND '00/12/01' 
-       AND SALARY >= 2700000;
+   AND DEPT_CODE IN('D9','D6') 
+   AND HIRE_DATE BETWEEN '90/01/01'
+   AND '00/12/01' 
+   AND SALARY >= 2700000;
 ```
 
 <br/>
@@ -226,10 +226,10 @@ SELECT
        *
   FROM EMPLOYEE
  WHERE EMP_ID LIKE '%1'
-       OR EMP_ID LIKE '%3'
-       OR EMP_ID LIKE '%5'
-       OR EMP_ID LIKE '%7'
-       OR EMP_ID LIKE '%9';
+    OR EMP_ID LIKE '%3'
+    OR EMP_ID LIKE '%5'
+    OR EMP_ID LIKE '%7'
+    OR EMP_ID LIKE '%9';
 ```
 
 <br/>
