@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제 5번</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>간이 계산기 만들기</h1>
+
+    첫번째 값 : <input id="num1" type="number"> <br>
+    두번째 값 : <input id="num2" type="number"> <br>
+    <button class="calculator" type="button" value="+">+</button> 
+    <button class="calculator" type="button" value="-">-</button> 
+    <button class="calculator" type="button" value="*">x</button> 
+    <button class="calculator" type="button" value="/">/</button> 
+    <button class="calculator" type="button" value="%">%</button> <br><br>
+
+    계산결과 : <br>
+    <div id="area5"></div>
+
+    <script>
+        $(function(){
+            $(".calculator").click(function(){
+                const operator = $(this).val();
+
+                const num1 = Number($("#num1").val());
+                const num2 = Number($("#num2").val());
+                let result = 0;
+
+                switch(operator){
+                case '+' : result = num1 + num2; break;
+                case '-' : result = num1 - num2; break;
+                case '*' : result = num1 * num2; break;
+                case '/' : result = num1 / num2; break;
+                case '%' : result = num1 % num2;
+                }
+                $("div").html(result);
+            })
+        })
+    </script>
+</body>
+</html>

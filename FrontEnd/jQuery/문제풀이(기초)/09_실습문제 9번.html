@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제 9번</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        p{margin: 0;}
+        input{margin-top: 1px;}
+        #update{margin-left: 1px}
+        #answer{width: 1000px;}
+    </style>
+</head>
+<body>
+    <h1>배열 실습문제 4</h1>
+    <fieldset>
+        <legend>보기</legend>
+        <p id="menu">피자 치킨 당근 햄버거 떡볶이</p>
+    </fieldset>
+    <input id="update" type="text" placeholder="삭제할 음식이름을 입력하세요">
+    <input id="add" type="text" placeholder="추가할 음식이름을 입력하세요"><br>
+    <input id="answer" type="text"> <br><br><br>
+
+    <button>처리 및 출력</button>
+
+    <script>
+        $(function(){
+            $("button").click(function(){
+                let menu = $("#menu").html().split(" ");
+                
+                const index = menu.indexOf($("#update").val());
+                
+                console.log(index);
+                
+                menu.push($("#add").val());
+                
+                if(index != -1){
+                    menu.splice(index,1);
+                }else{
+                    alert("삭제 매뉴 똑바로 입력해라");
+                }
+                
+                const result = menu.join(", ").replace(/, $/, "");
+                $("#answer").val(result);
+            });
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제 4번</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .wrap{width: 1000px; height: 250px;box-sizing: border-box;}
+        #header{height: 20%; margin-bottom: 20px;}
+        #content{height: 65%; border: 1px solid red;}
+        input{width: 85%;}
+
+        .wrap2{border: 1px solid black; margin-top: 20px; width: 1000px; height: 275px;box-sizing: border-box;}
+
+        #header2{width: 80.5%; height: 20%; margin-bottom: 35px; margin-left: 5px;}
+        #content2{width: 80%; height: 50%; border: 1px solid red; margin-left: 5px;}
+        .p2{margin: 5px 0 5px 5px;}
+        #b2{margin-left: 5px;}
+
+    </style>
+</head>
+<body>
+    <p>문제1. 다음 보기에 있는 텍스트 필드에 작성한 문자열의 길이를 알아올 수 있도록 구현하시오.</p> <br>
+    <div class="wrap">
+        <div id="header">
+            <form action="#">
+                <fieldset>
+                    <legend>보기</legend>
+                    <input type="text"> 
+                </fieldset>
+            </form>
+        </div>
+        <div id="content"></div>
+        <button id="btn1">확인하기</button>
+    </div>
+
+    <div class="wrap2">
+        <p class="p2">문제2. 다음 보기에 있는 문자열을 ,(콤마) 를 기준으로 잘라내어 하나하나 출력하시오</p>
+        <div id="header2">
+            <form action="#">
+                <fieldset>
+                    <legend>보기</legend>
+                    <p id="t" class="p2">콜라,사이다,햄버거,피자,한약</p>
+                </fieldset>
+            </form>
+        </div>
+        <div id="content2">
+
+        </div>
+        <button id="b2">확인하기</button>
+        <div id="footer2"></div>
+    </div>
+
+    <script>
+        $(function(){
+            $("#btn1").click(function(){
+                $("#content").html("보기의 문자열 길이는 " + $("input").eq(0).val().length + "글자 입니다.");
+            })
+
+            $("#b2").click(function(){
+                $("#content2").html(function(){
+                    let arr = $("#t").text().split(",");
+                    let ss = "";
+                    for(let i = 0; i < arr.length; i++){
+                        ss += (i+1) + "." + arr[i] + "<br>"; 
+                    }
+                    return ss;
+                });
+            })
+        })
+    </script>
+</body>
+</html>
