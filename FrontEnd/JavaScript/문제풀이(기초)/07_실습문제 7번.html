@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제 7번</title>
+    <style>
+        p{margin: 0;}
+    </style>
+</head>
+<body>
+    <h1>배열 실습 문제2</h1>
+    <fieldset>
+        <legend>보기</legend>
+        <p id="p1">r b</p>
+        <p id="p2">e v o l</p>
+    </fieldset>
+    <input id="area7" type="text">
+    <button onclick="reverse();">처리</button>
+
+    <script>
+        function reverse(){
+            const area7 = document.querySelector("#area7");
+
+            const arr1 = document.getElementById("p1").innerHTML.split(" ");
+            const arr2 = document.getElementById("p2").innerHTML.split(" ");
+
+            arr1.reverse();
+            arr2.reverse();
+
+            const arr3 = arr1.concat(arr2);
+            const result = arr3.join("");
+
+            area7.value = result;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제 1번</title>
+</head>
+<body>
+    <h1>행 열 각각 입력받아 테이블 만들기</h1>
+
+    <h3>힌트 : 반복문은 자바랑 같습니다. 다만! 변수만 var 데이터형 이라는걸 기억해주세요</h3>
+
+    <button onclick="makeTablePrompt();">테이블 생성</button> <br><br>
+
+    <table id="tb_prompt"></table>
+
+    <script>
+        function makeTablePrompt(){
+            var table_prompt = document.getElementById("tb_prompt");
+            var row = prompt("행을 입력해주세요");
+            var col = prompt("열을 입력해주세요");
+
+            var str = "";
+            
+            for(var i=1; i<=row; i++){
+                var str2 = "";
+                for(var j=1; j<=col; j++){
+                    str2+="<td></td>";
+                }
+                str += "<tr>" + str2 + "</tr>";
+            }
+
+            table_prompt.innerHTML = str;
+            table_prompt.border = "1";
+        }
+    </script>
+
+    <h1>행 열을 각각 입력받아서 새화면에서 출력하기</h1>
+
+    <h3>힌트 : document.write()를 이용하여 표를 출력하면 됩니다.</h3>
+
+    <button onclick="makeTableWrite();">테이블 새화면 생성</button>
+
+    <table id="tb_write"></table>
+
+    <script>
+        function makeTableWrite(){
+            var table_write = document.getElementById("tb_write");
+
+            var row = prompt("행을 입력해주세요");
+            var col = prompt("열을 입력해주세요");
+
+            var str = "<table border='1'>";
+            var count = 1;
+
+            for(var i=1; i<=row; i++){
+                var str2 = "";
+                for(var j=1; j<=col; j++){
+                    str2+="<td>" + count++ + "</td>";
+                }
+                str += "<tr>" + str2 + "</tr>";
+            }
+
+            table_write.innerHTML = str;
+
+            document.write(str)
+        }
+    </script>
+
+</body>
+</html>

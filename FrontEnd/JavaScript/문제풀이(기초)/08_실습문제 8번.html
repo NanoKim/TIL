@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제 8번</title>
+</head>
+<body>
+    <h1>배열 실습 문제3</h1>
+    <fieldset>
+        <legend>입력</legend>
+        <input id="choose" type="text">
+        <button onclick="menu();">입력</button>
+    </fieldset>
+    <input id="print" type="text">
+
+    <script>
+        const choose = document.getElementById("choose");
+        const area8 = document.getElementById("print");
+
+        const arr = [];
+
+        function menu(){
+            arr.push(choose.value);
+            choose.value = "";
+            area8.value = arr.join(", ");
+        }
+    </script>
+</body>
+</html>
