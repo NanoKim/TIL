@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김재영실습_v1</title>
+    <style>
+        /* 프레임 */
+        .wrap{width: 1000px; height: 800px; margin: auto;}
+        
+        /* set div */
+        div{box-sizing: border-box; border: 1px solid white;}
+
+        /* 전체 가로 */
+        .wrap>div{width: 100%;}
+
+        /* 전체 세로 */
+        #header{height: 17%; margin: 5px;}
+        #navigator{height: 5%; margin: 5px;}
+        #content{height: 58%; margin: 5px;}
+        #footer{height: 5%; margin: 5px;}
+
+        /* 열 정렬 */
+        #header>div{height: 100%; float: left;}
+        #content>div{height: 100%; float: left;}
+
+        /* =============================================== header =============================================== */
+        #logo{width: 15%;}
+        #main_logo{width: 85%;}
+
+        #header img{height: 70%; height: 70%;}
+
+        #logo{position: relative;}
+        #logo_img{
+            width: 80%;
+            padding: 35px 0px 0px 60px;
+        }
+
+        #main_logo{position: relative;}
+        #main_logo_img{
+            width: 70%;
+            padding: 35px 0px 0px 70px;
+        }
+
+        /* =============================================== navigator =============================================== */
+        #navi{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: 98%;
+            height: 100%;
+            
+            background-color: rgb(101, 172, 36);
+        }
+
+        #navi>li{
+            float: left;
+            width: 25%;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 400;
+            display: block;
+            line-height: 35px;
+        }
+
+        #navi a{text-decoration: none; color: white;}
+
+        /* =============================================== content =============================================== */
+        #left{width: 16%; margin: 0 10px 0 0;}
+        #center{width: 54%;}
+        #right{width: 26%; margin: 0 0 0 10px;}
+
+        /* content1 */
+        #left_img{height: 100%;}
+
+        /* content2 */
+        #center>div{height: 50%; width: 49%; float: left;}
+        #center p{text-align: center; line-height: 1; font-weight: 600; font-size: 12px; margin: 0;}
+        #center1, #center3{margin: 0 10px 0 0;}
+
+        /* content3 */
+        #right>div{width: 100%;}
+        #right>#login_form, #right>#right_img2{height: 23%;}
+        #right>#right_img1{height: 50%;}
+
+        #login_form>*{width: 100%;}
+        #login_form_input{height: 65%;}
+        #login_form_input>*{height: 85%; float: left;}
+        #login_form_etc{text-align: center; line-height: 0;}
+
+        #login_input_id_pwd{width: 70%;}
+        #login_input_id_pwd>input{width: 100%; height: 50%; box-sizing: border-box;}
+        #login_input_btn{width: 30%; height: 100%;; padding: 5px 10px 15px 10px;}
+        #login_input_btn>input{width: 100%; height: 100%;}
+
+        #login_form_etc>a{
+            text-decoration: none;
+            color: purple; 
+            font-size: 13px;
+            margin: 10px;
+        }
+        
+        /* =============================================== footer =============================================== */
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div id="header">
+            <div id="logo">
+                <img id="logo_img" src="image/logo.jpg" alt="이 사진은 logo 입니다.">
+            </div>
+            <div id="main_logo">
+                <img id="main_logo_img" src="image/mainlogo.jpg" alt="이 사진은 mainlogo 입니다.">
+            </div>
+        </div>
+        <div id="navigator">
+            <ul id="navi">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Board</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <div id="left">
+                <img style="width: 100%; height: 100%;" id="left_img" src="image/left_img.jpg" alt="이 사진은 content_left 입니다.">
+            </div>
+            <div id="center">
+                <div id="center1">
+                    <img src="image/main_img1.jpg" alt="북극곰을 살려주세요1" style="width: 100%; height: 90%;">
+                    <p>나무를 심는 사람들</p>
+                </div>
+                <div id="center2">
+                    <img src="image/main_img2.jpg" alt="북극곰을 살려주세요2" style="width: 100%; height: 90%;">
+                    <p>아이들에게 녹색미래를..</p>
+                </div>
+                <div id="center3">
+                    <img src="image/main_img3.jpg" alt="북극곰을 살려주세요3" style="width: 100%; height: 90%;">
+                    <p>설악산을 살리는길</p>
+                </div>
+                <div id="center4">
+                    <img src="image/main_img4.jpg" alt="북극곰을 살려주세요4" style="width: 100%; height: 90%;">
+                    <p>사라지는 북극곰들</p>
+                </div>
+            </div>
+            <div id="right">
+                <div id="login_form">
+                    <form action="#" id="login_form_input">
+                        <div id="login_input_id_pwd">
+                            <input type="text" placeholder="ID를 입력하세요.">
+                            <input type="password" placeholder="PW를 입력하세요.">
+                        </div>
+                        <div id="login_input_btn">
+                            <input type="submit" value="로그인">
+                        </div>
+                    </form>
+                    <div id="login_form_etc">
+                        <a href="#">회원가입</a>
+                        <a href="#">ID/PW 찾기</a>
+                    </div>
+                </div>
+                <div id="right_img1">
+                    <img style="width: 100%; height: 100%;" src="image/right_img.jpg" alt="이 사진은 content_right1 입니다.">
+                </div>
+                <div id="right_img2">
+                    <img style="width: 100%; height: 100%;" src="image/me_chat.jpg" alt="이 사진은 content_right2 입니다.">
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <img src="image/footer.JPG" alt="이 사진은 footer 입니다.">
+        </div>
+    </div>
+</body>
+</html>
