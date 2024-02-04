@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뻔뻔해요</title>
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/4dc2c036ac.js" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        @font-face {
+            font-family: 'KNUTRUTHTTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/KNUTRUTHTTF.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .modal_title, body{font-family: 'KNUTRUTHTTF', sans-serif;}
+
+        /* 틀 */
+        div{box-sizing: border-box; border: 0.5px solid white;}
+
+        /* 화면고정 */
+        .outer, .outer .ffh_header{min-width: 1669px;}
+
+        /* 공용 css */
+        .heada{
+            text-decoration: none; 
+            color: black;
+            font-weight: 600;
+            display: block;
+            text-align: center;
+            padding-top: 2px;
+        }
+        .ca{
+            text-decoration: none;
+            color: rgb(108, 108, 108);
+        }
+
+        .ptitle{color: black;}
+        .percentage{font-size: 13px; font-weight: 600; color: blue;}
+        .fl{float: left;}
+        .title_text{line-height: 280%;}
+        .more_left_text{font-size: 13px; color: #0056b3; font-weight: 600; line-height: 250%; text-align: right; padding-right: 5px;}
+        .more_btn{width: 100%; height: 100%; font-size: 13px; font-weight: 600; margin: 0; border: 0.5px solid lightgray; border-radius: 5px;}
+
+        /* 펀딩상품 공용 css */
+        .pr1{height: 10%;}
+        .pr2{height: 60%;}
+        .pr3{height: 30%;}
+
+        .pr3_r1{height: 25%;}
+        .pr3_r2{height: 50%;}
+        .pr3_r3{height: 25%;}
+
+        .pr3_r3_col1{width: 50%;}
+        .pr3_r3_col2{width: 50%;}
+
+        /* 전체 레이아웃 */
+        .ffh_wrap{width: 100%; height: 3500px; margin: auto; padding: 0 200px;}
+
+        /* 전체 가로 */
+        .ffh_wrap>div{width: 100%;}
+
+        /* 전체 세로 */
+        .ffh_header{height: 10%;position: fixed; top: 0; left: 0; right: 0; background-color: white; z-index: 1000;}
+        .ffh_content{height: 85%; margin-top: 150px; margin-bottom: 100px; border: 1px solid blue;}
+        .ffh_footer{height: 4%;}
+
+        /* ============================ 헤드 시작 ============================ */
+        .ffh_header>div{height: 100%;}
+        .ffh_header_center{width: 100%; padding: 0 200px;}
+        .ffh_header_center_left{width: 70%; height: 100%;}
+        .ffh_header_center_right{width: 30%; height: 100%;}
+        
+
+        .ffh_header_center1{height: 50%;}
+        .ffh_header_center2{height: 50%;}
+
+        .ffh_header_center_left>div, .ffh_header_center_right>div{
+            height: 100%;
+            text-align: center;
+            font-weight: 600;
+            line-height: 230%;
+        }
+
+        .ffh_header_center_left1{width: 20%; background-image: url(../SAMPLE/src/logo.png); background-size: cover;}
+        .ffh_header_center_left2{width: 4%;}
+        .ffh_header_center_left3{width: 5%;}
+        .ffh_header_center_left4{width: 8%;}
+        .ffh_header_center_left5{width: 5%;}
+        .ffh_header_center_left6{width: 5%;}
+        .ffh_header_center_left7{width: 8%;}
+        .ffh_header_center_left8{width: 45%;}
+
+        .ffh_header_center_right>div{height: 100%;}
+        .ffh_header_center_right1{width: 30%;}
+        .ffh_header_center_right2{width: 10%;}
+        .ffh_header_center_right3{width: 10%;}
+        .ffh_header_center_right4{width: 10%;}
+        .ffh_header_center_right5{width: 10%;}
+        .ffh_header_center_right6{width: 30%;}
+        /* ============================ 헤드 끝 ============================ */
+
+
+        /* ============================ 바디 시작 ============================ */
+        .ffh_content>div{width: 100%;}
+        .ffh_content_adv{height: 12%;}
+        .ffh_content_top{height: 28%; margin-top: 60px;}
+        .ffh_frame1{height: 27%; margin: 50px 0; border-top: 0.5px solid lightgray;}
+        .ffh_frame2{height: 27%; border-top: 0.5px solid lightgray;}
+
+        /* adv */
+        .ffh_content_adv img{width: 100%;}
+
+        /* 바디 1번 */
+        .ffh_content_top>div{height: 100%;}
+        .ffh_content_top_left{width: 65%;}
+        .ffh_content_top_middle{width: 5%;}
+        .ffh_content_top_right{width: 30%;}
+        
+        /* 바디 1번 좌측 */
+        .ffh_content_top_left>div{width: 100%;}
+        .ffh_content_top_left1{height: 10%;}
+        .ffh_content_top_left2{height: 90%;}
+        
+        .ffh_content_top_left1>div{height: 100%;}
+        .ffh_content_top_left1_col1{width: 78%;}
+        .ffh_content_top_left1_col2{width: 20%;}
+        
+        /* 바디 1번 좌측 헤더 */
+        .ffh_content_top_left1_col2>div{width: 100%;}
+        .ffh_content_top_left1_col2_row1{height: 50%;}
+        .ffh_content_top_left1_col2_row2{height: 50%;}
+
+        .ffh_content_top_left1_col2_row2>div{height: 100%;}
+        .ffh_content_top_left1_col2_row2_col1{width: 60%;}
+        .ffh_content_top_left1_col2_row2_col2{width: 40%;}
+
+        /* 바디 1번 좌측 바디 */
+        .ffh_content_top_left2>div{width: 23%; height: 50%; margin-right: 19px;}
+        .ffh_content_top_left2>div>div{width: 100%;}
+        .pr3_r3>div{height: 100%;}
+
+        /* 바디 1번 우측*/
+        .ffh_content_top_right>div{width: 100%;}
+        .ffh_content_top_right_row1{height: 10%;}
+        .ffh_content_top_right_row2{height: 76%;}
+        .ffh_content_top_right_row3{height: 14%;}
+
+        /* 바디 1번 우측 헤더 */
+        .ffh_content_top_right_row1>div{height: 100%;}
+        .ffh_content_top_right_row1_col1{width: 50%;}
+        .ffh_content_top_right_row1_col2{width: 50%;}
+
+        /* 바디 1번 우측 바디 */
+        .ffh_content_top_right_row2>div{width: 100%; height: 20%;}
+        .rk_r1{height: 25%;}
+        .rk_r2{height: 75%;}
+        .rk_r2>div{height: 100%}
+
+        .rk_col1{width: 30%;}
+        .rk_col2{width: 40%;}
+        .rk_col2>div{width: 100%; height: 50%;}
+        .rk_col3{width: 30%;}
+        .rk_col3>div{width: 100%; height: 50%;}
+
+        .ffh_content_top_right_row3{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 바디 2번 3번 */
+        .ffh_frame1>div{width: 100%;}
+        .ffh_frame1_top{height: 10%;}
+        .ffh_frame1_body{height: 90%;}
+
+        .ffh_frame1_top>div{height: 100%;}
+        .ffh_frame1_top_col1{width: 85%;}
+        .ffh_frame1_top_col2{width: 15%;}
+
+        .ffh_frame1_top_col2>div{width: 100%; height: 50%;}
+        .ffh_frame1_top_col2_row2>div{height: 100%;}
+        .ffh_frame1_top_col2_row2_left{width: 70%;}
+        .ffh_frame1_top_col2_row2_right{width: 30%;}
+
+        .ffh_frame1_body>div{width: 19%; height: 50%;}
+
+        /* ============================ 바디 끝 ============================ */
+
+
+        /* ============================ 푸터 시작 ============================ */
+        .ffh_footer>div{width: 100%;}
+        .ffh_footer_top{height: 40%;}
+        .ffh_footer_middle{height: 60%;}
+
+        .ffh_footer_top>div{height: 100%;}
+        .ffh_footer_top_left{width: 43%;}
+        .ffh_footer_top_middle{width: 30%;}
+        .ffh_footer_top_right{width: 27%;}
+
+        /* 푸터_top 모달 들어갈 div 전체 */
+        .ffh_footer_top_left>div{height: 100%;}
+
+        .ffh_footer_top_left1{width: 15%; text-align: center;}
+        .ffh_footer_top_left2{width: 15%;}
+        .ffh_footer_top_left3{width: 25%;}
+        .ffh_footer_top_left4{width: 30%;}
+        .ffh_footer_top_left5{width: 15%;}
+
+        /* 푸터_top a 전체 */
+        .ffh_footer_top a{
+            text-decoration: none; 
+            color: rgb(58, 58, 58); 
+            font-weight: 600;
+            margin: 15px;
+            vertical-align: middle;
+            line-height: 310%;
+        }
+
+        /* ============================ 푸터 모달 시작 ============================ */
+
+        .modal {
+            position: fixed;
+            display: none;
+            justify-content: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal_body {
+            position: relative;
+            top: 50%;
+            width: 800px;
+            max-width: 800px;
+            word-wrap: break-word;
+            overflow: auto;
+            height: 600px;
+            margin-top: 5vh;
+            padding: 40px;
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+            transform: translateY(-50%);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        .close-btn-bottom {
+            width: 80px;
+            margin-top: 15px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .close-btn-bottom:hover {background-color: #0056b3;}
+        .btn-open-modal{width: 100%; height: 100%; background-color: white; border: none; color: rgb(58, 58, 58); font-weight: 600;}
+
+        /* ============================ 푸터 모달 끝 ============================ */
+
+        /* 푸터_middle 전체 */
+        .ffh_footer_middle>p{
+            width: 100%; 
+            box-sizing: border-box;
+            margin: 0;
+            font-size: 12px;
+            color: rgb(58, 58, 58);
+        }
+
+        .p1{height: 70%; padding: 5px 15px;}
+        .p2{height: 20%; text-align: center;}
+
+        /* ============================ 푸터 끝 ============================ */
+
+        #top-btn { 
+            display: none; 
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 999;
+            background-color: white;
+            border: 2px solid #dbdbdb;
+            outline: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            font-weight: 500;
+            color: #333333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <!-- 전체 레이아웃 -->
+        <div class="ffh_wrap ffh_main">
+
+            <!-- 헤드 -->
+            <div class="ffh_header">
+                <div class="ffh_header_center fl">
+                    <div class="ffh_header_center1"></div>
+                    <div class="ffh_header_center2">
+                        <div class="ffh_header_center_left fl">
+                            <div class="ffh_header_center_left1 fl"></div>
+                            <div class="ffh_header_center_left2 fl"><a href="#" class="heada">홈</a></div>
+                            <div class="ffh_header_center_left3 fl"><a href="#" class="heada">전체</a></div>
+                            <div class="ffh_header_center_left4 fl"><a href="#" class="heada">카테고리</a></div>
+                            <div class="ffh_header_center_left5 fl"><a href="#" class="heada">인기</a></div>
+                            <div class="ffh_header_center_left6 fl"><a href="#" class="heada">신규</a></div>
+                            <div class="ffh_header_center_left7 fl"><a href="#" class="heada">마감임박</a></div>
+                            <div class="ffh_header_center_left8 fl"></div>
+                        </div>
+                        <div class="ffh_header_center_right fl">
+                            <div class="ffh_header_center_right1 fl"><a href="#" class="heada">프로젝트 등록</a></div>
+                            <div class="ffh_header_center_right2 fl"><a href="#" class="heada"><i class="fa-solid fa-magnifying-glass fa-xl" style="display: flex; justify-content: center; line-height: 150%;"></i></a></div>
+                            <div class="ffh_header_center_right3 fl"><a href="#" class="heada"><i class="fa-solid fa-heart fa-xl" style="color: #ff0000; line-height: 150%;"></i></a></div>
+                            <div class="ffh_header_center_right4 fl"><a href="#" class="heada"><i class="fa-regular fa-bell fa-xl" style="line-height: 150%;"></i></a></div>
+                            <div class="ffh_header_center_right5 fl">프</div>
+                            <div class="ffh_header_center_right6 fl">닉네임</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 바디 -->
+            <div class="ffh_content">
+                <div class="ffh_content_adv fl">
+                    <div id="demo" class="carousel slide" data-ride="carousel">
+                        <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                        </ul>
+                        <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../SAMPLE/src/temp1.jpg" alt="">
+                            <div class="carousel-caption">
+                            <h3>Los Angeles</h3>
+                            <p>We had such a great time in LA!</p>
+                            </div>   
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../SAMPLE/src/temp2.jpg" alt="Chicago">
+                            <div class="carousel-caption">
+                            <h3>Chicago</h3>
+                            <p>Thank you, Chicago!</p>
+                            </div>   
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../SAMPLE/src/temp3.jpg" alt="New York">
+                            <div class="carousel-caption">
+                            <h3>New York</h3>
+                            <p>We love the Big Apple!</p>
+                            </div>   
+                        </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="ffh_content_top fl">
+                    <div class="ffh_content_top_left fl">
+                        <div class="ffh_content_top_left1">
+                            <div class="ffh_content_top_left1_col1 fl"><h2 class="title_text">전체 프로젝트</h2></div>
+                            <div class="ffh_content_top_left1_col2 fl">
+                                <div class="ffh_content_top_left1_col2_row1"></div>
+                                <div class="ffh_content_top_left1_col2_row2">
+                                    <div class="ffh_content_top_left1_col2_row2_col1 fl more_left_text">전체 프로젝트</div>
+                                    <div class="ffh_content_top_left1_col2_row2_col2 fl"><a href="#"><button type="button" class="more_btn">더보기</button></a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffh_content_top_left2">
+                            <div class="ffh_content_top_left2_all fl">
+                                <div class="ffh_content_top_left2_p1_row1 pr1"><!-- 여백 --></div>
+                                <div class="ffh_content_top_left2_p1_row2 pr2">
+                                    <a href="#"><img src="src/temp1.jpg" alt="" width="219px" height="219px"></a>
+                                </div>
+                                <div class="ffh_content_top_left2_p1_row3 pr3">
+                                    <div class="pr3_r1"><a href="#" class="ca">언더웨어</a></div>
+                                    <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                    <div class="pr3_r3">
+                                        <div class="pr3_r3_col1 fl"><span class="percentage">222% 달성</span></div>
+                                        <div class="pr3_r3_col2 fl"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ffh_content_top_left2_all fl">
+                                <div class="ffh_content_top_left2_p1_row1 pr1"><!-- 여백 --></div>
+                                <div class="ffh_content_top_left2_p1_row2 pr2">
+                                    <a href="#"><img src="src/temp1.jpg" alt="" width="219px" height="219px"></a>
+                                </div>
+                                <div class="ffh_content_top_left2_p1_row3 pr3">
+                                    <div class="pr3_r1"><a href="#" class="ca">언더웨어</a></div>
+                                    <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                    <div class="pr3_r3">
+                                        <div class="pr3_r3_col1 fl"><span class="percentage">511% 달성</span></div>
+                                        <div class="pr3_r3_col2 fl"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ffh_content_top_left2_all fl">
+                                <div class="ffh_content_top_left2_p1_row1 pr1"><!-- 여백 --></div>
+                                <div class="ffh_content_top_left2_p1_row2 pr2">
+                                    <a href="#"><img src="src/temp1.jpg" alt="" width="219px" height="219px"></a>
+                                </div>
+                                <div class="ffh_content_top_left2_p1_row3 pr3">
+                                    <div class="pr3_r1"><a href="#" class="ca">언더웨어</a></div>
+                                    <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                    <div class="pr3_r3">
+                                        <div class="pr3_r3_col1 fl"><span class="percentage">1541% 달성</span></div>
+                                        <div class="pr3_r3_col2 fl"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ffh_content_top_left2_all fl">
+                                <div class="ffh_content_top_left2_p1_row1 pr1"><!-- 여백 --></div>
+                                <div class="ffh_content_top_left2_p1_row2 pr2">
+                                    <a href="#"><img src="src/temp1.jpg" alt="" width="219px" height="219px"></a>
+                                </div>
+                                <div class="ffh_content_top_left2_p1_row3 pr3">
+                                    <div class="pr3_r1"><a href="#" class="ca">언더웨어</a></div>
+                                    <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                    <div class="pr3_r3">
+                                        <div class="pr3_r3_col1 fl"><span class="percentage">131% 달성</span></div>
+                                        <div class="pr3_r3_col2 fl"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ffh_content_top_left2_all fl">
+                                <div class="ffh_content_top_left2_p1_row1 pr1"><!-- 여백 --></div>
+                                <div class="ffh_content_top_left2_p1_row2 pr2">
+                                    <a href="#"><img src="src/temp1.jpg" alt="" width="219px" height="219px"></a>
+                                </div>
+                                <div class="ffh_content_top_left2_p1_row3 pr3">
+                                    <div class="pr3_r1"><a href="#" class="ca">언더웨어</a></div>
+                                    <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                    <div class="pr3_r3">
+                                        <div class="pr3_r3_col1 fl"><span class="percentage">442% 달성</span></div>
+                                        <div class="pr3_r3_col2 fl"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ffh_content_top_left2_all fl">
+                                <div class="ffh_content_top_left2_p1_row1 pr1"><!-- 여백 --></div>
+                                <div class="ffh_content_top_left2_p1_row2 pr2">
+                                    <a href="#"><img src="src/temp1.jpg" alt="" width="219px" height="219px"></a>
+                                </div>
+                                <div class="ffh_content_top_left2_p1_row3 pr3">
+                                    <div class="pr3_r1"><a href="#" class="ca">언더웨어</a></div>
+                                    <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                    <div class="pr3_r3">
+                                        <div class="pr3_r3_col1 fl"><span class="percentage">369% 달성</span></div>
+                                        <div class="pr3_r3_col2 fl"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ffh_content_top_left2_all fl">
+                                <div class="ffh_content_top_left2_p1_row1 pr1"><!-- 여백 --></div>
+                                <div class="ffh_content_top_left2_p1_row2 pr2">
+                                    <a href="#"><img src="src/temp1.jpg" alt="" width="219px" height="219px"></a>
+                                </div>
+                                <div class="ffh_content_top_left2_p1_row3 pr3">
+                                    <div class="pr3_r1"><a href="#" class="ca">언더웨어</a></div>
+                                    <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                    <div class="pr3_r3">
+                                        <div class="pr3_r3_col1 fl"><span class="percentage">250% 달성</span></div>
+                                        <div class="pr3_r3_col2 fl"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ffh_content_top_left2_all fl">
+                                <div class="ffh_content_top_left2_p1_row1 pr1"><!-- 여백 --></div>
+                                <div class="ffh_content_top_left2_p1_row2 pr2">
+                                    <a href="#"><img src="src/temp1.jpg" alt="" width="219px" height="219px"></a>
+                                </div>
+                                <div class="ffh_content_top_left2_p1_row3 pr3">
+                                    <div class="pr3_r1"><a href="#" class="ca">언더웨어</a></div>
+                                    <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                    <div class="pr3_r3">
+                                        <div class="pr3_r3_col1 fl"><span class="percentage">170% 달성</span></div>
+                                        <div class="pr3_r3_col2 fl"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ffh_content_top_middle fl"><!-- 여백 --></div>
+                    <div class="ffh_content_top_right fl">
+                        <div class="ffh_content_top_right_row1">
+                            <div class="ffh_content_top_right_row1_col1 fl">
+                                <h2 class="title_text">프로젝트 랭킹</h2>
+                            </div>
+                            <div class="ffh_content_top_right_row1_col2 fl">
+                                <!-- 추후에 현재시간 표기 -->
+                            </div>
+                        </div>
+                        <div class="ffh_content_top_right_row2">
+                            <div class="ffh_content_top_right_row2_rk fl">
+                                <div class="rk_r1"><!--여백--></div>
+                                <div class="rk_r2">
+                                    <div class="rk_col1 fl">
+                                        <a href="#"><img src="src/temp1.jpg" alt="" width="100px" height="90px"></a>
+                                    </div>
+                                    <div class="rk_col2 fl">
+                                        <div class="rk_col2_row1"><a href="#" class="ca">언더웨어</a></div>
+                                        <div class="rk_col2_row2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                    </div>
+                                    <div class="rk_col3 fl">
+                                        <div class="rk_col3_row1"><span class="percentage">10000% 달성</span></div>
+                                        <div class="rk_col3_row2"><!-- 여백 --></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ffh_content_top_right_row2_rk fl">
+                                <div class="rk_r1"><!--여백--></div>
+                                <div class="rk_r2">
+                                    <div class="rk_col1 fl">
+                                        <a href="#"><img src="src/temp1.jpg" alt="" width="100px" height="90px"></a>
+                                    </div>
+                                    <div class="rk_col2 fl">
+                                        <div class="rk_col2_row1"><a href="#" class="ca">언더웨어</a></div>
+                                        <div class="rk_col2_row2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                    </div>
+                                    <div class="rk_col3 fl">
+                                        <div class="rk_col3_row1"><span class="percentage">6666% 달성</span></div>
+                                        <div class="rk_col3_row2"><!-- 여백 --></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ffh_content_top_right_row2_rk fl">
+                                <div class="rk_r1"><!--여백--></div>
+                                <div class="rk_r2">
+                                    <div class="rk_col1 fl">
+                                        <a href="#"><img src="src/temp1.jpg" alt="" width="100px" height="90px"></a>
+                                    </div>
+                                    <div class="rk_col2 fl">
+                                        <div class="rk_col2_row1"><a href="#" class="ca">언더웨어</a></div>
+                                        <div class="rk_col2_row2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                    </div>
+                                    <div class="rk_col3 fl">
+                                        <div class="rk_col3_row1"><span class="percentage">3416% 달성</span></div>
+                                        <div class="rk_col3_row2"><!-- 여백 --></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ffh_content_top_right_row2_rk fl">
+                                <div class="rk_r1"><!--여백--></div>
+                                <div class="rk_r2">
+                                    <div class="rk_col1 fl">
+                                        <a href="#"><img src="src/temp1.jpg" alt="" width="100px" height="90px"></a>
+                                    </div>
+                                    <div class="rk_col2 fl">
+                                        <div class="rk_col2_row1"><a href="#" class="ca">언더웨어</a></div>
+                                        <div class="rk_col2_row2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                    </div>
+                                    <div class="rk_col3 fl">
+                                        <div class="rk_col3_row1"><span class="percentage">1699% 달성</span></div>
+                                        <div class="rk_col3_row2"><!-- 여백 --></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ffh_content_top_right_row2_rk fl">
+                                <div class="rk_r1"><!--여백--></div>
+                                <div class="rk_r2">
+                                    <div class="rk_col1 fl">
+                                        <a href="#"><img src="src/temp1.jpg" alt="" width="100px" height="90px"></a>
+                                    </div>
+                                    <div class="rk_col2 fl">
+                                        <div class="rk_col2_row1"><a href="#" class="ca">언더웨어</a></div>
+                                        <div class="rk_col2_row2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                    </div>
+                                    <div class="rk_col3 fl">
+                                        <div class="rk_col3_row1" style="display: grid;"><span class="percentage">1234% 달성</span></div>
+                                        <div class="rk_col3_row2"><!-- 여백 --></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffh_content_top_right_row3">
+                            <a href="#"><button style="width: 100%; height: 50%; border-radius: 10px; padding: 10px 30px;">인기 프로젝트 더보기</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ffh_frame1 fl">
+                    <div class="ffh_frame1_top fl">
+                        <div class="ffh_frame1_top_col1 fl">
+                            <h2 class="title_text">신규 프로젝트</h2>
+                        </div>
+                        <div class="ffh_frame1_top_col2 fl">
+                            <div class="ffh_frame1_top_col2_row1"></div>
+                            <div class="ffh_frame1_top_col2_row2">
+                                <div class="ffh_frame1_top_col2_row2_left fl more_left_text">신규 프로젝트</div>
+                                <div class="ffh_frame1_top_col2_row2_right fl"><a href="#"><button type="button" class="more_btn">더보기</button></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ffh_frame1_body fl">
+                        <div class="ffh_fream2 fl">
+                            <div class="pr1"></div>
+                            <div class="pr2">
+                                <a href="#"><img src="src/temp1.jpg" alt="" width="280px" height="212px"></a>
+                            </div>
+                            <div class="pr3">
+                                <div class="pr3_r1"><a href="#">언더웨어</a></div>
+                                <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                <div class="pr3_r3">
+                                    <div class="pr3_r3_col1 fl"><span class="percentage">111% 달성</span></div>
+                                    <div class="pr3_r3_col2 fl"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffh_fream2 fl" style="margin-left: 18px">
+                            <div class="pr1"></div>
+                            <div class="pr2">
+                                <a href="#"><img src="src/temp1.jpg" alt="" width="280px" height="212px"></a>
+                            </div>
+                            <div class="pr3">
+                                <div class="pr3_r1"><a href="#">언더웨어</a></div>
+                                <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                <div class="pr3_r3">
+                                    <div class="pr3_r3_col1 fl"><span class="percentage">555% 달성</span></div>
+                                    <div class="pr3_r3_col2 fl"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffh_fream2 fl" style="margin: 0 19px;">
+                            <div class="pr1"></div>
+                            <div class="pr2">
+                                <a href="#"><img src="src/temp1.jpg" alt="" width="280px" height="212px"></a>
+                            </div>
+                            <div class="pr3">
+                                <div class="pr3_r1"><a href="#">언더웨어</a></div>
+                                <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                <div class="pr3_r3">
+                                    <div class="pr3_r3_col1 fl"><span class="percentage">346% 달성</span></div>
+                                    <div class="pr3_r3_col2 fl"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffh_fream2 fl" style="margin-right: 18px">
+                            <div class="pr1"></div>
+                            <div class="pr2">
+                                <a href="#"><img src="src/temp1.jpg" alt="" width="280px" height="212px"></a>
+                            </div>
+                            <div class="pr3">
+                                <div class="pr3_r1"><a href="#">언더웨어</a></div>
+                                <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                <div class="pr3_r3">
+                                    <div class="pr3_r3_col1 fl"><span class="percentage">172% 달성</span></div>
+                                    <div class="pr3_r3_col2 fl"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffh_fream2 fl">
+                            <div class="pr1"></div>
+                            <div class="pr2">
+                                <a href="#"><img src="src/temp1.jpg" alt="" width="280px" height="212px"></a>
+                            </div>
+                            <div class="pr3">
+                                <div class="pr3_r1"><a href="#">언더웨어</a></div>
+                                <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                <div class="pr3_r3">
+                                    <div class="pr3_r3_col1 fl"><span class="percentage">340% 달성</span></div>
+                                    <div class="pr3_r3_col2 fl"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffh_fream2 fl">
+                            <div class="pr1"></div>
+                            <div class="pr2">
+                                <a href="#"><img src="src/temp1.jpg" alt="" width="280px" height="212px"></a>
+                            </div>
+                            <div class="pr3">
+                                <div class="pr3_r1"><a href="#">언더웨어</a></div>
+                                <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                <div class="pr3_r3">
+                                    <div class="pr3_r3_col1 fl"><span class="percentage">100% 달성</span></div>
+                                    <div class="pr3_r3_col2 fl"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffh_fream2 fl" style="margin-left: 18px">
+                            <div class="pr1"></div>
+                            <div class="pr2">
+                                <a href="#"><img src="src/temp1.jpg" alt="" width="280px" height="212px"></a>
+                            </div>
+                            <div class="pr3">
+                                <div class="pr3_r1"><a href="#">언더웨어</a></div>
+                                <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                <div class="pr3_r3">
+                                    <div class="pr3_r3_col1 fl"><span class="percentage">170% 달성</span></div>
+                                    <div class="pr3_r3_col2 fl"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffh_fream2 fl" style="margin: 0 19px;">
+                            <div class="pr1"></div>
+                            <div class="pr2">
+                                <a href="#"><img src="src/temp1.jpg" alt="" width="280px" height="212px"></a>
+                            </div>
+                            <div class="pr3">
+                                <div class="pr3_r1"><a href="#">언더웨어</a></div>
+                                <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                <div class="pr3_r3">
+                                    <div class="pr3_r3_col1 fl"><span class="percentage">5521% 달성</span></div>
+                                    <div class="pr3_r3_col2 fl"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffh_fream2 fl" style="margin-right: 18px;">
+                            <div class="pr1"></div>
+                            <div class="pr2">
+                                <a href="#"><img src="src/temp1.jpg" alt="" width="280px" height="212px"></a>
+                            </div>
+                            <div class="pr3">
+                                <div class="pr3_r1"><a href="#">언더웨어</a></div>
+                                <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                <div class="pr3_r3">
+                                    <div class="pr3_r3_col1 fl"><span class="percentage">123% 달성</span></div>
+                                    <div class="pr3_r3_col2 fl"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffh_fream2 fl">
+                            <div class="pr1"></div>
+                            <div class="pr2">
+                                <a href="#"><img src="src/temp1.jpg" alt="" width="280px" height="212px"></a>
+                            </div>
+                            <div class="pr3">
+                                <div class="pr3_r1"><a href="#">언더웨어</a></div>
+                                <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                <div class="pr3_r3">
+                                    <div class="pr3_r3_col1 fl"><span class="percentage">668% 달성</span></div>
+                                    <div class="pr3_r3_col2 fl"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ffh_frame1 fl">
+                    <div class="ffh_frame1_top fl">
+                        <div class="ffh_frame1_top_col1 fl">
+                            <h2 class="title_text">마감임박 프로젝트</h2>
+                        </div>
+                        <div class="ffh_frame1_top_col2 fl">
+                            <div class="ffh_frame1_top_col2_row1"></div>
+                            <div class="ffh_frame1_top_col2_row2">
+                                <div class="ffh_frame1_top_col2_row2_left fl more_left_text">마감임박 프로젝트</div>
+                                <div class="ffh_frame1_top_col2_row2_right fl"><a href="#"><button type="button" class="more_btn">더보기</button></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ffh_frame1_body fl">
+                        <div class="ffh_fream2 fl">
+                            <div class="pr1"></div>
+                            <div class="pr2">
+                                <a href="#"><img src="src/temp1.jpg" alt="" width="280px" height="212px"></a>
+                            </div>
+                            <div class="pr3">
+                                <div class="pr3_r1"><a href="#">언더웨어</a></div>
+                                <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                <div class="pr3_r3">
+                                    <div class="pr3_r3_col1 fl"><span class="percentage">466% 달성</span></div>
+                                    <div class="pr3_r3_col2 fl"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffh_fream2 fl" style="margin-left: 18px">
+                            <div class="pr1"></div>
+                            <div class="pr2">
+                                <a href="#"><img src="src/temp1.jpg" alt="" width="280px" height="212px"></a>
+                            </div>
+                            <div class="pr3">
+                                <div class="pr3_r1"><a href="#">언더웨어</a></div>
+                                <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                <div class="pr3_r3">
+                                    <div class="pr3_r3_col1 fl"><span class="percentage">777% 달성</span></div>
+                                    <div class="pr3_r3_col2 fl"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffh_fream2 fl" style="margin: 0 19px;">
+                            <div class="pr1"></div>
+                            <div class="pr2">
+                                <a href="#"><img src="src/temp1.jpg" alt="" width="280px" height="212px"></a>
+                            </div>
+                            <div class="pr3">
+                                <div class="pr3_r1"><a href="#">언더웨어</a></div>
+                                <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                <div class="pr3_r3">
+                                    <div class="pr3_r3_col1 fl"><span class="percentage">570% 달성</span></div>
+                                    <div class="pr3_r3_col2 fl"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffh_fream2 fl" style="margin-right: 18px">
+                            <div class="pr1"></div>
+                            <div class="pr2">
+                                <a href="#"><img src="src/temp1.jpg" alt="" width="280px" height="212px"></a>
+                            </div>
+                            <div class="pr3">
+                                <div class="pr3_r1"><a href="#">언더웨어</a></div>
+                                <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                <div class="pr3_r3">
+                                    <div class="pr3_r3_col1 fl"><span class="percentage">101% 달성</span></div>
+                                    <div class="pr3_r3_col2 fl"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffh_fream2 fl">
+                            <div class="pr1"></div>
+                            <div class="pr2">
+                                <a href="#"><img src="src/temp1.jpg" alt="" width="280px" height="212px"></a>
+                            </div>
+                            <div class="pr3">
+                                <div class="pr3_r1"><a href="#">언더웨어</a></div>
+                                <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                <div class="pr3_r3">
+                                    <div class="pr3_r3_col1 fl"><span class="percentage">196% 달성</span></div>
+                                    <div class="pr3_r3_col2 fl"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffh_fream2 fl">
+                            <div class="pr1"></div>
+                            <div class="pr2">
+                                <a href="#"><img src="src/temp1.jpg" alt="" width="280px" height="212px"></a>
+                            </div>
+                            <div class="pr3">
+                                <div class="pr3_r1"><a href="#">언더웨어</a></div>
+                                <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                <div class="pr3_r3">
+                                    <div class="pr3_r3_col1 fl"><span class="percentage">2500% 달성</span></div>
+                                    <div class="pr3_r3_col2 fl"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffh_fream2 fl" style="margin-left: 18px">
+                            <div class="pr1"></div>
+                            <div class="pr2">
+                                <a href="#"><img src="src/temp1.jpg" alt="" width="280px" height="212px"></a>
+                            </div>
+                            <div class="pr3">
+                                <div class="pr3_r1"><a href="#">언더웨어</a></div>
+                                <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                <div class="pr3_r3">
+                                    <div class="pr3_r3_col1 fl"><span class="percentage">170% 달성</span></div>
+                                    <div class="pr3_r3_col2 fl"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffh_fream2 fl" style="margin: 0 19px;">
+                            <div class="pr1"></div>
+                            <div class="pr2">
+                                <a href="#"><img src="src/temp1.jpg" alt="" width="280px" height="212px"></a>
+                            </div>
+                            <div class="pr3">
+                                <div class="pr3_r1"><a href="#">언더웨어</a></div>
+                                <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                <div class="pr3_r3">
+                                    <div class="pr3_r3_col1 fl"><span class="percentage">3333% 달성</span></div>
+                                    <div class="pr3_r3_col2 fl"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffh_fream2 fl" style="margin-right: 18px;">
+                            <div class="pr1"></div>
+                            <div class="pr2">
+                                <a href="#"><img src="src/temp1.jpg" alt="" width="280px" height="212px"></a>
+                            </div>
+                            <div class="pr3">
+                                <div class="pr3_r1"><a href="#">언더웨어</a></div>
+                                <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                <div class="pr3_r3">
+                                    <div class="pr3_r3_col1 fl"><span class="percentage">190% 달성</span></div>
+                                    <div class="pr3_r3_col2 fl"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ffh_fream2 fl">
+                            <div class="pr1"></div>
+                            <div class="pr2">
+                                <a href="#"><img src="src/temp1.jpg" alt="" width="280px" height="212px"></a>
+                            </div>
+                            <div class="pr3">
+                                <div class="pr3_r1"><a href="#">언더웨어</a></div>
+                                <div class="pr3_r2"><a href="#"><strong class="ptitle">[모아주문] 10년차 디자이너의 진심트렁크, 누드팬츠</strong></a></div>
+                                <div class="pr3_r3">
+                                    <div class="pr3_r3_col1 fl"><span class="percentage">200% 달성</span></div>
+                                    <div class="pr3_r3_col2 fl"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 푸터 -->
+            <div class="ffh_footer">
+                <div class="ffh_footer_top fl">
+                    <div class="ffh_footer_top_left fl">
+                        <div class="ffh_footer_top_left1 fl">
+                            <a href="#">뻔뻔해요</a>
+                        </div>
+                        <div class="ffh_footer_top_left2 fl">
+                            <!-- 이용약관 모달 -->
+                            <button id="btn-open-modal1" class="btn-open-modal">이용약관</button>
+                        </div>
+                        <div class="ffh_footer_top_left3 fl">
+                            <!-- 개인정보처리방침 모달 -->
+                            <button id="btn-open-modal2" class="btn-open-modal">개인정보처리방침</button>
+                        </div>
+                        <div class="ffh_footer_top_left4 fl">
+                            <!-- 프로젝트 등록 심사 기준 모달 -->
+                            <button id="btn-open-modal3" class="btn-open-modal">프로젝트 등록 심사 기준</button>
+                        </div>
+                        <div class="ffh_footer_top_left5 fl">
+                            <!-- 고객센터 모달 -->
+                            <button id="btn-open-modal4" class="btn-open-modal">고객센터</button>
+                        </div>
+                    </div>
+                    <div class="ffh_footer_top_middle fl">
+                    <!-- 여백(추후 공유 링크) -->
+                    </div>
+                    <div class="ffh_footer_top_right fl">
+                    <!-- 여백 -->
+                    </div>
+                </div>
+                <div class="ffh_footer_middle fl">
+                    <p class="p1">뻔뻔해요는 프로젝트의 당사자가 아니며, 직접적인 통신판매를 진행하지 않습니다. 프로젝트의 완수 및 선물제공의 책임은 해당 프로젝트의 창작자에게 있으며, 프로젝트와 관련하여 후원자와 발생하는 법적 분쟁에 대한 책임은 해당 창작자가 부담합니다.</p>
+                    <p class="p2">Copyright © 2024 FundFundhaeyo Institute All Right Reserved</p>
+                </div>
+            </div>
+
+            <!-- top 버튼 -->
+            <button id="top-btn"> ▲ </button >
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() { 
+
+            // Top 버튼 특정 스크롤높이에서만 보이기 / 숨기기
+            $(window).scroll(function(){
+                if($(this).scrollTop() > 100){
+                    $('#top-btn').fadeIn();
+                }else{
+                    $('#top-btn').fadeOut();
+                }
+            });
+
+            // Top 버튼 클릭시 페이지 상단으로 이동
+            $('#top-btn').click(function(){
+                $('html, body').animate({scrollTop : 0}, 800);
+                return false;
+            });
+        })
+    </script>
+
+    <!-- ============================ 푸터바 모달 ============================ -->
+
+    <!-- 푸터바 모달1 : 이용약관 -->
+
+    <div id="modal1" class="modal">
+        <div class="modal_body">
+            <h2 class="modal_title">이용약관</h2>
+            <span class="close-btn" onclick="closeModal('#modal1')">×</span>
+            <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd </p>
+            <button class="close-btn-bottom" onclick="closeModal('#modal1')">닫기</button>
+        </div>
+    </div>
+
+    <!-- 푸터바 모달2 : 개인정보처리방침 -->
+
+    <div id="modal2" class="modal">
+        <div class="modal_body">
+            <h2>개인정보처리방침</h2>
+            <span class="close-btn" onclick="closeModal('#modal2')">×</span>
+            <p>2222222222222222dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd </p>
+            <button class="close-btn-bottom" onclick="closeModal('#modal2')">닫기</button>
+        </div>
+    </div>
+
+    <!-- 푸터바 모달3 : 프로젝트 등록 심사 기준 -->
+
+    <div id="modal3" class="modal">
+        <div class="modal_body">
+            <h2>프로젝트 등록 심사 기준</h2>
+            <span class="close-btn" onclick="closeModal('#modal3')">×</span>
+            <p>3333333333333333333333dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd </p>
+            <button class="close-btn-bottom" onclick="closeModal('#modal3')">닫기</button>
+        </div>
+    </div>
+    
+    <!-- 푸터바 모달4 : 고객센터 -->
+
+    <div id="modal4" class="modal">
+        <div class="modal_body">
+            <h2>고객센터</h2>
+            <span class="close-btn" onclick="closeModal('#modal4')">×</span>
+            <p>3444444444444444444dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd </p>
+            <button class="close-btn-bottom" onclick="closeModal('#modal4')">닫기</button>
+        </div>
+    </div>
+
+     <script>
+        function openModal(modalId) {
+            const modal = document.querySelector(modalId);
+            modal.style.display = "flex";
+        }
+    
+        function closeModal(modalId) {
+            const modal = document.querySelector(modalId);
+            modal.style.display = "none";
+        }
+    
+        const btnOpenModal1 = document.querySelector('#btn-open-modal1');
+        const btnOpenModal2 = document.querySelector('#btn-open-modal2');
+        const btnOpenModal3 = document.querySelector('#btn-open-modal3');
+        const btnOpenModal4 = document.querySelector('#btn-open-modal4');
+    
+        btnOpenModal1.addEventListener("click", () => openModal('#modal1'));
+        btnOpenModal2.addEventListener("click", () => openModal('#modal2'));
+        btnOpenModal3.addEventListener("click", () => openModal('#modal3'));
+        btnOpenModal4.addEventListener("click", () => openModal('#modal4'));
+    </script>
+
+</body>
+</html>
