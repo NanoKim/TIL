@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뻔뻔해요</title>
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/4dc2c036ac.js" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        .modal_title, body{font-family: 'KNUTRUTHTTF', sans-serif;}
+
+        /* 틀 */
+        div{box-sizing: border-box; border: 0.5px solid white;}
+
+        /* 화면고정 */
+        .outer, .outer .ffh_header{min-width: 1669px;}
+
+        /* 공용 css */
+        .heada{
+            text-decoration: none; 
+            color: black;
+            font-weight: 600;
+            display: block;
+            text-align: center;
+            padding-top: 2px;
+        }
+        .ca{
+            text-decoration: none;
+            color: rgb(108, 108, 108);
+        }
+
+        .ptitle{color: black;}
+        .percentage{font-size: 13px; font-weight: 600; color: blue;}
+        .fl{float: left;}
+        .title_text{line-height: 280%;}
+        .more_left_text{font-size: 13px; color: #0056b3; font-weight: 600; line-height: 250%; text-align: right; padding-right: 5px;}
+        .more_btn{width: 100%; height: 100%; font-size: 13px; font-weight: 600; margin: 0; border: 0.5px solid lightgray; border-radius: 5px;}
+
+        /* 펀딩상품 공용 css */
+        .pr1{height: 10%;}
+        .pr2{height: 60%;}
+        .pr3{height: 30%;}
+
+        .pr3_r1{height: 25%;}
+        .pr3_r2{height: 50%;}
+        .pr3_r3{height: 25%;}
+
+        .pr3_r3_col1{width: 50%;}
+        .pr3_r3_col2{width: 50%;}
+
+        /* 전체 레이아웃 */
+        .ffh_wrap{width: 100%; height: 3500px; margin: auto; padding: 0 200px;}
+
+        /* 전체 가로 */
+        .ffh_wrap>div{width: 100%;}
+
+        /* 전체 세로 */
+        .ffh_header{height: 10%;position: fixed; top: 0; left: 0; right: 0; background-color: white; z-index: 1000;}
+        .ffh_content{height: 85%; margin-top: 150px; margin-bottom: 100px; border: 1px solid blue;}
+        .ffh_footer{height: 4%;}
+
+        /* ============================ 푸터 시작 ============================ */
+        .ffh_footer>div{width: 100%;}
+        .ffh_footer_top{height: 40%;}
+        .ffh_footer_middle{height: 60%;}
+
+        .ffh_footer_top>div{height: 100%;}
+        .ffh_footer_top_left{width: 43%;}
+        .ffh_footer_top_middle{width: 30%;}
+        .ffh_footer_top_right{width: 27%;}
+
+        /* 푸터_top 모달 들어갈 div 전체 */
+        .ffh_footer_top_left>div{height: 100%;}
+
+        .ffh_footer_top_left1{width: 15%; text-align: center;}
+        .ffh_footer_top_left2{width: 15%;}
+        .ffh_footer_top_left3{width: 25%;}
+        .ffh_footer_top_left4{width: 30%;}
+        .ffh_footer_top_left5{width: 15%;}
+
+        /* 푸터_top a 전체 */
+        .ffh_footer_top a{
+            text-decoration: none; 
+            color: rgb(58, 58, 58); 
+            font-weight: 600;
+            margin: 15px;
+            vertical-align: middle;
+            line-height: 310%;
+        }
+
+        /* ============================ 푸터 모달 시작 ============================ */
+
+        .modal {
+            position: fixed;
+            display: none;
+            justify-content: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal_body {
+            position: relative;
+            top: 50%;
+            width: 800px;
+            max-width: 800px;
+            word-wrap: break-word;
+            overflow: auto;
+            height: 600px;
+            margin-top: 5vh;
+            padding: 40px;
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+            transform: translateY(-50%);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        .close-btn-bottom {
+            width: 80px;
+            margin-top: 15px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .close-btn-bottom:hover {background-color: #0056b3;}
+        .btn-open-modal{width: 100%; height: 100%; background-color: white; border: none; color: rgb(58, 58, 58); font-weight: 600;}
+
+        /* ============================ 푸터 모달 끝 ============================ */
+
+        /* 푸터_middle 전체 */
+        .ffh_footer_middle>p{
+            width: 100%; 
+            box-sizing: border-box;
+            margin: 0;
+            font-size: 12px;
+            color: rgb(58, 58, 58);
+        }
+
+        .p1{height: 70%; padding: 5px 15px;}
+        .p2{height: 20%; text-align: center;}
+
+        /* ============================ 푸터 끝 ============================ */
+
+        #top-btn { 
+            display: none; 
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 999;
+            background-color: white;
+            border: 2px solid #dbdbdb;
+            outline: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            font-weight: 500;
+            color: #333333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <!-- 전체 레이아웃 -->
+        <div class="ffh_wrap ffh_main">
+            <!-- 푸터 -->
+            <div class="ffh_footer">
+                <div class="ffh_footer_top fl">
+                    <div class="ffh_footer_top_left fl">
+                        <div class="ffh_footer_top_left1 fl">
+                            <a href="#">뻔뻔해요</a>
+                        </div>
+                        <div class="ffh_footer_top_left2 fl">
+                            <!-- 이용약관 모달 -->
+                            <button id="btn-open-modal1" class="btn-open-modal">이용약관</button>
+                        </div>
+                        <div class="ffh_footer_top_left3 fl">
+                            <!-- 개인정보처리방침 모달 -->
+                            <button id="btn-open-modal2" class="btn-open-modal">개인정보처리방침</button>
+                        </div>
+                        <div class="ffh_footer_top_left4 fl">
+                            <!-- 프로젝트 등록 심사 기준 모달 -->
+                            <button id="btn-open-modal3" class="btn-open-modal">프로젝트 등록 심사 기준</button>
+                        </div>
+                        <div class="ffh_footer_top_left5 fl">
+                            <!-- 고객센터 모달 -->
+                            <button id="btn-open-modal4" class="btn-open-modal">고객센터</button>
+                        </div>
+                    </div>
+                    <div class="ffh_footer_top_middle fl">
+                    <!-- 여백(추후 공유 링크) -->
+                    </div>
+                    <div class="ffh_footer_top_right fl">
+                    <!-- 여백 -->
+                    </div>
+                </div>
+                <div class="ffh_footer_middle fl">
+                    <p class="p1">뻔뻔해요는 프로젝트의 당사자가 아니며, 직접적인 통신판매를 진행하지 않습니다. 프로젝트의 완수 및 선물제공의 책임은 해당 프로젝트의 창작자에게 있으며, 프로젝트와 관련하여 후원자와 발생하는 법적 분쟁에 대한 책임은 해당 창작자가 부담합니다.</p>
+                    <p class="p2">Copyright © 2024 FundFundhaeyo Institute All Right Reserved</p>
+                </div>
+            </div>
+            <!-- top 버튼 -->
+            <button id="top-btn"> ▲ </button >
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() { 
+
+            // Top 버튼 특정 스크롤높이에서만 보이기 / 숨기기
+            $(window).scroll(function(){
+                if($(this).scrollTop() > 100){
+                    $('#top-btn').fadeIn();
+                }else{
+                    $('#top-btn').fadeOut();
+                }
+            });
+
+            // Top 버튼 클릭시 페이지 상단으로 이동
+            $('#top-btn').click(function(){
+                $('html, body').animate({scrollTop : 0}, 800);
+                return false;
+            });
+        })
+    </script>
+
+    <!-- ============================ 푸터바 모달 ============================ -->
+
+    <!-- 푸터바 모달1 : 이용약관 -->
+
+    <div id="modal1" class="modal">
+        <div class="modal_body">
+            <h2 class="modal_title">이용약관</h2>
+            <span class="close-btn" onclick="closeModal('#modal1')">×</span>
+            <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd </p>
+            <button class="close-btn-bottom" onclick="closeModal('#modal1')">닫기</button>
+        </div>
+    </div>
+
+    <!-- 푸터바 모달2 : 개인정보처리방침 -->
+
+    <div id="modal2" class="modal">
+        <div class="modal_body">
+            <h2>개인정보처리방침</h2>
+            <span class="close-btn" onclick="closeModal('#modal2')">×</span>
+            <p>2222222222222222dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd </p>
+            <button class="close-btn-bottom" onclick="closeModal('#modal2')">닫기</button>
+        </div>
+    </div>
+
+    <!-- 푸터바 모달3 : 프로젝트 등록 심사 기준 -->
+
+    <div id="modal3" class="modal">
+        <div class="modal_body">
+            <h2>프로젝트 등록 심사 기준</h2>
+            <span class="close-btn" onclick="closeModal('#modal3')">×</span>
+            <p>3333333333333333333333dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd </p>
+            <button class="close-btn-bottom" onclick="closeModal('#modal3')">닫기</button>
+        </div>
+    </div>
+    
+    <!-- 푸터바 모달4 : 고객센터 -->
+
+    <div id="modal4" class="modal">
+        <div class="modal_body">
+            <h2>고객센터</h2>
+            <span class="close-btn" onclick="closeModal('#modal4')">×</span>
+            <p>3444444444444444444dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd </p>
+            <button class="close-btn-bottom" onclick="closeModal('#modal4')">닫기</button>
+        </div>
+    </div>
+
+     <script>
+        function openModal(modalId) {
+            const modal = document.querySelector(modalId);
+            modal.style.display = "flex";
+        }
+    
+        function closeModal(modalId) {
+            const modal = document.querySelector(modalId);
+            modal.style.display = "none";
+        }
+    
+        const btnOpenModal1 = document.querySelector('#btn-open-modal1');
+        const btnOpenModal2 = document.querySelector('#btn-open-modal2');
+        const btnOpenModal3 = document.querySelector('#btn-open-modal3');
+        const btnOpenModal4 = document.querySelector('#btn-open-modal4');
+    
+        btnOpenModal1.addEventListener("click", () => openModal('#modal1'));
+        btnOpenModal2.addEventListener("click", () => openModal('#modal2'));
+        btnOpenModal3.addEventListener("click", () => openModal('#modal3'));
+        btnOpenModal4.addEventListener("click", () => openModal('#modal4'));
+    </script>
+
+</body>
+</html>

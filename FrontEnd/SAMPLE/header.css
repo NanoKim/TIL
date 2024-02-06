@@ -1,0 +1,79 @@
+/* 폰트 */
+.outer{font-family: 'Gamja Flower', sans-serif;}
+
+/* 틀 */
+.ffh_header div{box-sizing: border-box; border: 0.5px solid white;}
+
+/* 화면고정 */
+.outer, .outer .ffh_header{min-width: 1669px;}
+
+/* 공용 css */
+.heada{
+    text-decoration: none; 
+    text-align: center;
+    font-weight: 600;
+    padding-top: 2px;
+    color: black;
+    display: block;
+}
+.heada:hover{text-decoration: none;}
+.headtext{font-size: 19px;}
+.ca{
+    text-decoration: none;
+    color: rgb(108, 108, 108);
+}
+.texthover:hover{
+    color: lightskyblue;
+}
+
+.fl{float: left;}
+
+/* 전체 레이아웃 */
+.ffh_wrap{width: 100%; margin: auto; padding: 0 200px;}
+
+/* 전체 가로 */
+.ffh_wrap>div{width: 100%;}
+
+/* 전체 세로 */
+.ffh_header{height: 10%;position: fixed; top: 0; left: 0; right: 0; background-color: white; z-index: 1000;}
+
+/* ============================ 헤드 시작 ============================ */
+.ffh_header>div{height: 100%;}
+.ffh_header_center{width: 100%; padding: 0 200px;}
+.ffh_header_center_left{width: 70%; height: 100%;}
+.ffh_header_center_right{width: 30%; height: 100%;}
+
+.ffh_header_center1{height: 50%;}
+.ffh_header_center2{height: 50%;}
+
+.ffh_header_center_left>div, .ffh_header_center_right>div{
+    height: 100%;
+    text-align: center;
+    font-weight: 600;
+    line-height: 230%;
+}
+
+.ffh_header_center_left1 a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url(../SAMPLE/src/logo.png);
+    background-size: cover;
+}
+.ffh_header_center_left1{width: 20%;}
+.ffh_header_center_left2{width: 4%;}
+.ffh_header_center_left3{width: 5%;}
+.ffh_header_center_left4{width: 8%;}
+.ffh_header_center_left5{width: 5%;}
+.ffh_header_center_left6{width: 5%;}
+.ffh_header_center_left7{width: 8%;}
+.ffh_header_center_left8{width: 45%;}
+
+.ffh_header_center_right>div{height: 100%;}
+.ffh_header_center_right1{width: 30%;}
+.ffh_header_center_right2{width: 10%;}
+.ffh_header_center_right3{width: 10%;}
+.ffh_header_center_right4{width: 10%;}
+.ffh_header_center_right5{width: 10%;}
+.ffh_header_center_right6{width: 30%;}
+/* ============================ 헤드 끝 ============================ */
