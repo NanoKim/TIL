@@ -8,6 +8,6 @@
 </head>
 <body>
 	<%@ include file="views/common/menubar.jsp" %>
-	wqewq test
+	
 </body>
 </html>
