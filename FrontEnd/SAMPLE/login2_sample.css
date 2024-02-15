@@ -1,0 +1,58 @@
+@charset "UTF-8";
+/* 기본 셋업 */
+.login_form_outer{width:100%; height: 1000px; padding: 0 250px;}
+.login_form_outer>div{width:100%;}
+.blank_top{height: 15%;}
+.blank_bottom{height: 5%;}
+
+
+/* 메인 영역 시작 */
+.login_form_main{height: 80%;}
+.login_form_main>div{width: 100%;}
+
+.login_form_main_header{
+    height: 30%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_form_main_content{height: 70%; width: 300px; margin-top: 30px;}
+.login_form_main_content_wrap{border: 1px solid lightgray; border-radius: 5px; width: 450px; height: 470px;}
+.long_input_btn{background-color: white; border: 0.5px solid lightskyblue; border-radius: 5px;}
+.long_input{background-color: white; border: none; width: 350px; height: 40px;}
+.login_btn_div{margin-bottom: 20px;}
+.login_btn{width: 385px; height: 40px; background-color: lightskyblue; border: 0.5px solid lightgray; border-radius: 5px; color: white;}
+
+.login_btn_search_div{margin: 0 36px;}
+
+/* 메인 영역 끝 */
+
+/* 소셜 로그인 시작 */
+
+.login-alternative-methods {
+    text-align: center;
+    margin: 20px 0;
+}
+  
+.login-alternative-methods span {
+    position: relative;
+}
+  
+.login-alternative-methods span:before,
+.login-alternative-methods span:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 165px;
+  height: 1px;
+  background-color: #ccc;
+}
+
+.login-alternative-methods span:before {
+  right: calc(100% + 10px);
+}
+
+.login-alternative-methods span:after {
+  left: calc(100% + 10px);
+}
