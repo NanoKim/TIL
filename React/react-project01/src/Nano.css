@@ -1,0 +1,57 @@
+button {
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid skyblue;
+  width: auto;
+  height: 30px;
+  transition: transform 0.3s ease-in-out;
+  font-weight: bold;
+}
+
+button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  background-color: skyblue;
+}
+
+input {
+  border: 2px solid purple;
+  border-radius: 55px;
+  width: 200px;
+  height: 30px;
+  padding-left: 5px;
+  transition: transform 0.3s ease-in-out;
+  font-weight: bold;
+}
+
+input:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+select {
+  border: 2px solid purple;
+  border-radius: 55px;
+  width: 200px;
+  height: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+
+select:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+textarea {
+  border: 2px solid purple;
+  border-radius: 5px;
+  width: 200px;
+  height: auto;
+  resize: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+textarea:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
