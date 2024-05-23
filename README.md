@@ -23,7 +23,7 @@
 - [jQuery](https://github.com/NanoKim/TIL/blob/main/FrontEnd/jQuery/%EB%82%B4%EC%9A%A9%EC%A0%95%EB%A6%AC.md)
 
 ## Engineer Information Processing
-- [내용정리](https://github.com/NanoKim/TIL/blob/main/Engineer%20Information%20Processing/%EB%82%B4%EC%9A%A9%EC%A0%95%EB%A6%AC.md)
+- [내용정리](https://github.com/NanoKim/TIL/tree/main/Engineer%20Information%20Processing)
 
 <!--
 ## TBU
