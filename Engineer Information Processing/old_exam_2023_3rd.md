@@ -159,7 +159,7 @@ OIDC (Open ID ~) : JWT(Json Web Token) 형식의 Access Token, 인증이 목표
 ② 751
 
 # 4
-** 다음은 C 언어 코드이다. 알맞는 출력 결과를 작성하시오.**
+**다음은 C 언어 코드이다. 알맞는 출력 결과를 작성하시오.**
 
 ```shell
 #include <stdio.h>
