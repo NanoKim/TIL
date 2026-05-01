@@ -1,7 +1,7 @@
 
 # Table of Contents
 
-- [Thymeleaf & HTML](#thymeleaf--html)
+- [Thymeleaf](#thymeleaf)
 - [Environment](#environment)
 - [What is Thymeleaf?](#what-is-thymeleaf)
 - [pros and cons](#pros-and-cons)
@@ -17,19 +17,35 @@
   - [Etc](#etc)
 - [HTML Entity & Escape vs Unescape](#html-entity--escape-vs-unescape)
 - [Escape](#escape)
+- [Grammer](#grammer)
+  - [Annotation](#annotation)
+  - [Variable](#variable)
+  - [SpringEL](#springel)
+  - [Safe Navigation Operator](#safe-navigation-operator)
+  - [Local Variable](#local-variable)
+  - [Image](#image)
+  - [Hyper Link](#hyper-link)
+  - [Calculation](#calculation)
+  - [Property](#property)
+  - [Loof](#loof)
+  - [Switch Case](#switch-case)
+  - [If, Unless](#if-unless)
+  - [Literal, Instead of Literal](#literal-instead-of-literal)
+  - [Block](#block)
+  - [Classappend](#classappend)
+  - [Validation](#validation)
+  - [Javascript Inline](#javascript-inline)
+  - [Template](#template)
+- [Thymeleaf Object](#thymeleaf-object)
+  - [Under Spring Boot v 3.0](#under-spring-boot-v-30)
+  - [Over Spring Boot v 3.0](#over-spring-boot-v-30)
+  - [Convenience Object](#convenience-object)
+- [Thymeleaf Practical](#thymeleaf-practical)
 
 
-## Thymeleaf & HTML
+## Thymeleaf
 
 ![Thymeleaf](https://img.shields.io/badge/-Thymeleaf-005F0F?style=flat-square&logo=Thymeleaf&logoColor=white)
-![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white)
-
-
-## Environment 
-
-> Language : Java 17
-> IDE : Intellij
-> Framework : SpringBoot (3.2.5)
 
 
 ## What is Thymeleaf?
@@ -69,3 +85,55 @@
 - &를 \&amp;로 이스케이프
 - "를 \&quot;로 이스케이프
 - '를 \&#39;로 이스케이프
+
+
+## Grammer
+
+### Annotation
+
+### Variable
+
+### SpringEL
+
+### Safe Navigation Operator
+
+### Local Variable
+
+### Image
+
+### Hyper Link
+
+### Calculation
+
+### Property
+
+### Loof
+
+### Switch Case
+
+### If, Unless
+
+### Literal, Instead of Literal
+
+### Block
+
+### Classappend
+
+### Validation
+
+### Javascript Inline
+
+### Template
+
+
+## Thymeleaf Object
+
+### Under Spring Boot v 3.0
+
+### Over Spring Boot v 3.0
+
+### Convenience Object
+
+
+## Thymeleaf Practical
+
