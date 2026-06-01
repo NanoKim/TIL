@@ -12,4 +12,3 @@
 - 📂 [SQLD](./SQLD)
 - 📂 [Thymeleaf](./Thymeleaf)
 - 📂 [jQuery](./jQuery)
- 
