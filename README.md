@@ -11,4 +11,4 @@
 - 📂 [React](./React)
 - 📂 [SQLD](./SQLD)
 - 📂 [Thymeleaf](./Thymeleaf)
-- 📂 [jQuery](./jQuery
+- 📂 [jQuery](./jQuery)
